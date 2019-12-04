@@ -14,10 +14,10 @@ ul {
 }
 li {
   display: inline-block;
-  margin: 0 10px;
 }
 a {
   color: #666;
+  cursor: pointer;
 }
 body{
   background-color: burlywood;
@@ -48,6 +48,15 @@ header{
           color: #ad0711;
         }
       }
+    }
+  }
+}
+
+footer{
+  a{
+    margin: 0 10px;
+    &:hover{
+      color: #ad0711;
     }
   }
 }
