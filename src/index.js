@@ -21,10 +21,23 @@ const menu = {
             ]
         },
         {
-            id:'doc ',
+            id:'doc',
             name:'关于我',
             text: '',
             clazz: 'doc ROUTER_DOC'
+        }
+    ]
+}
+
+const headerTip={
+    list:[
+        {
+            clazz:'contact-qq',
+            textZh:'QQ：8989@qq.com'
+        },
+        {
+            clazz:'contact-phone',
+            textZh:'Phone:18888888888'
         }
     ]
 }
@@ -33,14 +46,14 @@ const footer = {
     copyRight: 'CopyRight @www.xiareWang.com All Rights Reserved.',
     list:[
         {
-            path: 'home',
+            clazz: 'ROUTER_HOME',
             name: '返回首页'
         },
         {
-            path:'introduce',
+            clazz:'ROUTER_DOC',
             name:'关于我'
         }
     ]
 }
 
-export{menu, footer}
+export{menu, headerTip, footer}

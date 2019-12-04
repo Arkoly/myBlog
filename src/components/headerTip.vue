@@ -1,30 +1,27 @@
 <template>
-  <div id="footer" >
-    <ul class="footer-info">
-      <li v-for="item in footer.list">
-        <a
-           :class="[item.clazz]" >
-        {{item.name}}
-        </a>
-      </li>
-    </ul>
-    <div>{{footer.copyRight}}</div>
+  <div class="header-tips">
+      <ul class="wrapper">
+          <li v-for="item in tips.list" 
+              :class="[item.clazz]">
+            <a>{{item.textZh}}</a>
+          </li>
+      </ul>
   </div>
 </template>
 
 <script>
-
 export default {
+  name: 'HelloWorld',
   data () {
     return {
-      footer:{}
+      tips:{}
     }
   },
-  created(){
+   created(){
     import(/* webpackChunkName: "[request]" */ `../index.js`).then(mod => {
-      let data = mod.footer;
+      let data = mod.headerTip;
       this.$nextTick(()=>{
-        this.footer = data;
+        this.nav = data;
       });
     });
   }

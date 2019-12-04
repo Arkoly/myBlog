@@ -6,12 +6,11 @@
 
 <script>
 import $ from 'jquery';
-import util from '@/js/util.js'
+import util from '@/js/util.js';
 export default {
   name: 'App',
   created(){
     util.allBind();
-    console.log('util.allBind()');
   }
 }
 </script>

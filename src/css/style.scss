@@ -1,25 +1,53 @@
 
+/*初始化css*/
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, button, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, input, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  outline: none;
+  vertical-align: baseline;
+}
+ul {
+  list-style-type: none;
+}
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+a {
+  color: #666;
+}
+body{
+  background-color: burlywood;
+  .router-view{
+    .home,
+    .blog{
+      height: 600px;
+  }
+  }
+}
 
-h1, h2 {
-    font-weight: normal;
-  }
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  li {
-    display: inline-block;
-    margin: 0 10px;
-  }
-  a {
-    color: #000;
-  }
-  body{
-    background-color: burlywood;
-    .router-view{
-      .home,
-      .blog{
-        height: 600px;
-    }
+header{
+  .menu{
+    width: 100%;
+    height: auto;
+    .menu-main{
+      width: 1000px;
+      margin: 0 auto;
+      // background-color: red;
+      li a{
+        display: inline-block;
+        width: 100px;
+        height: 40px;
+        line-height: 40px;
+        color: #666;
+        &:hover,&.active{
+          background-color: silver;
+          color: #ad0711;
+        }
+      }
     }
   }
+}

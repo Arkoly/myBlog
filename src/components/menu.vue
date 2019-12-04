@@ -2,10 +2,11 @@
   <div id="menu" :class="[nav.clazz,]">
     <ul class="menu-main">
       <li v-for="item in nav.list"
-          :class="['menu-mian-list', item.clazz]"
+          :class="['menu-mian-list', item.clazz, {active: name===item.id}]"
           :key="item.id">
           <a
-            :target=" item.target">
+            :target=" item.target"
+            :class="[item.clazz, {active: name===item.id}]">
             <span>{{item.name}}</span>
             <p v-if="nav.max===0">{{item.text}}</p>
           </a>
@@ -22,6 +23,11 @@ export default {
       nav:{}
     }
   },
+  computed:{
+    name(){
+      return this.$route.name;
+    }
+  },
   created(){
     import(/* webpackChunkName: "[request]" */ `../index.js`).then(mod => {
       let data = mod.menu;
@@ -29,6 +35,8 @@ export default {
         this.nav = data;
       });
     });
+    console.log('name')
+    console.log(this.$route.name)
   }
 }
 </script>
