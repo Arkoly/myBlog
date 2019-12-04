@@ -28,7 +28,8 @@ export default {
   components:{
     compMenu,
     compFooter
-  }
+  },
+  
 }
 </script>
 

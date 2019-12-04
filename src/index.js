@@ -6,14 +6,14 @@ const menu = {
             id: 'home',
             name: '首页',
             text:'',
-            clazz: 'home'
+            clazz: 'home ROUTER_HOME'
          },
         {
             id: 'blog',
             name: '博客',
             text: '',
-            clazz: 'blog',
-            list:[
+            clazz: 'blog ROUTER_BLOG',
+            list:[ 
                 {name:'css设计',id:'css',clazz:'item-css'},
                 {name:'js设计',id:'js',clazz:'item-js'},
                 {name:'html设计',id:'html',clazz:'item-html'},
@@ -21,10 +21,10 @@ const menu = {
             ]
         },
         {
-            id:'introduce',
+            id:'doc ',
             name:'关于我',
             text: '',
-            clazz: 'introduce'
+            clazz: 'doc ROUTER_DOC'
         }
     ]
 }

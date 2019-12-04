@@ -7,9 +7,13 @@ import router from './router'
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
-new Vue({
+/*Arkoly add window.VM*/
+window.VM = new Vue({
   el: '#app',
   router,
   components: { App },
   template: '<App/>'
-})
+});
+// console.log('window.VM');
+// window.VM.$router.push('/blog');
+// console.log(window.VM.$router);

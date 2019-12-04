@@ -2,11 +2,10 @@
   <div id="menu" :class="[nav.clazz,]">
     <ul class="menu-main">
       <li v-for="item in nav.list"
-          :class="['menu-mian-list', item.clazz, {active: name===item.id}]"
+          :class="['menu-mian-list', item.clazz]"
           :key="item.id">
           <a
-            :target=" item.target"
-            :class="[{active:name===item.id},]">
+            :target=" item.target">
             <span>{{item.name}}</span>
             <p v-if="nav.max===0">{{item.text}}</p>
           </a>

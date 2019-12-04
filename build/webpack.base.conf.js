@@ -27,6 +27,7 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
+      // '$COM': resolve('src/common-bundle/common'), //定义共用js by Arkoly
     }
   },
   module: {
