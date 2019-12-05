@@ -21,6 +21,12 @@ const menu = {
             ]
         },
         {
+            id:'solarTerm',
+            name:'二十四节气',
+            text: '',
+            clazz: 'solar ROUTER_SOLAR_TERM'
+        },
+        {
             id:'doc',
             name:'关于我',
             text: '',

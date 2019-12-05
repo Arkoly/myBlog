@@ -22,10 +22,7 @@ a {
 body{
   background-color: burlywood;
   .router-view{
-    .home,
-    .blog{
-      height: 600px;
-  }
+    min-height: 800px;
   }
 }
 
@@ -44,7 +41,7 @@ header{
         line-height: 40px;
         color: #666;
         &:hover,&.active{
-          background-color: silver;
+          background-color: #e6aaaa;
           color: #ad0711;
         }
       }

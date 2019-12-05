@@ -13,6 +13,7 @@ function getRouterPath(el){
     if($(el).hasClass('ROUTER_HOME')) return '/';
     if($(el).hasClass('ROUTER_BLOG')) return '/blog';
     if($(el).hasClass('ROUTER_DOC')) return '/doc';
+    if($(el).hasClass('ROUTER_SOLAR_TERM')) return '/solarTerm';
 }
 
 function allBind(_vue){
