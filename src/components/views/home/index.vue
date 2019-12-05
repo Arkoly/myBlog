@@ -11,6 +11,14 @@ export default {
     return {
       msg: 'Welcome to home page'
     }
+  },
+   created(){
+    import(/* webpackChunkName: "[request]" */ `../../../skins/index.js`).then(mod => {
+      // let data = mod.solarTerm;
+      this.$nextTick(()=>{
+        // this.solarTerm = data;
+      });
+    });
   }
 }
 </script>
