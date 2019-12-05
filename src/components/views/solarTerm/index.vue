@@ -11,8 +11,9 @@
         <div class="calendaricity-content" 
           v-if="index === currentIndex">
           <ul class="wrapper"  >
-            <li class="imgSrc" :style="'background-image:url('+item.img+')'"></li>
-            <li v-for="item0 in item.details"  :class="item0.clazz">
+            <li v-for="item0 in item.details"  
+                :class="item0.clazz" 
+                :style="item0.img? 'background-image:url('+item0.img+')':''">
               <h2>{{item0.title}}</h2>
               <div>
                 <p v-for="item1 in item0.data">{{item1.list}}</p>

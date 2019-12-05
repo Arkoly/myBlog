@@ -101,7 +101,7 @@ footer{
           left: 130px;
           li{
             width: 600px;
-            &.imgSrc{
+            &.detail01{
               width: 690px;
               position: relative;
               left: 25%;
@@ -112,23 +112,25 @@ footer{
               -webkit-box-shadow: -2px 8px 20px 15px rgba(0,0,0,0.31);
               -moz-box-shadow: -2px 8px 20px 15px rgba(0,0,0,0.31);
               box-shadow: -2px 8px 20px 15px rgba(0,0,0,0.31);
+              -webkit-transition: all .5s;
+              -moz-transition: .5s all;
+              -o-transition: .5s all;
               &:hover{
                 transform: scale(1.1);
-                opacity: 0.6;
-                &~.detail01{
-                  display: block; 
+                opacity: 0.8;
+                >div{
+                  display: block;
                 }
               }
             }
-            &.detail01{
+            &.detail01>div{
               // background: url(#{$jieqiImgSrc}/lichun0.jpg) no-repeat center center;
               position: absolute;
               display: none;
               top: 110px;
-              left:350px;
               font-size: 18px;
               color: #dec3c4;
-              background-color: rgba(86, 35, 35, 0.61)
+              background-color: rgba(78, 11, 11, 0.84);
              
             }
           }
