@@ -11,7 +11,7 @@ export default {
     }
   },
    created(){
-    import(/* webpackChunkName: "[request]" */ `../index.js`).then(mod => {
+    import(/* webpackChunkName: "[request]" */ `../skins/index.js`).then(mod => {
       let data = mod.menu;
       this.$nextTick(()=>{
         this.nav = data;
