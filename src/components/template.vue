@@ -1,6 +1,7 @@
 <template>
   <div :class="['main']">
     <header>
+      <com-headerTip></com-headerTip>
       <nav class="menu">
          <comp-menu></comp-menu>
       </nav>
@@ -17,6 +18,8 @@
 </template>
 
 <script>
+
+const comHeaderTip = () => import(/* webpackChunkName: "components/headerTip" */'@/components/headerTip')
 const compMenu = () => import(/* webpackChunkName: "components/menu" */'@/components/menu')
 const compFooter = () => import(/* webpackChunkName: "components/footer" */'@/components/footer')
 export default {
@@ -26,6 +29,7 @@ export default {
     }
   },
   components:{
+    comHeaderTip,
     compMenu,
     compFooter
   },

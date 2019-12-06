@@ -35,7 +35,6 @@ export default {
         this.nav = data;
       });
     });
-    console.log('name')
     console.log(this.$route.name)
   }
 }

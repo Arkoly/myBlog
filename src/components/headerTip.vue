@@ -21,7 +21,7 @@ export default {
     import(/* webpackChunkName: "[request]" */ `../skins/index.js`).then(mod => {
       let data = mod.headerTip;
       this.$nextTick(()=>{
-        this.nav = data;
+        this.tips = data;
       });
     });
   }

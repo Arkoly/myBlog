@@ -111,11 +111,48 @@ body .router-view {
   height: auto;
 }
 header {
-  position: relative;
-}
-header .menu {
   width: 100%;
   height: auto;
+  position: relative;
+}
+header .header-tips {
+  background: #1c2327;
+}
+header .header-tips::before {
+  background: #000
+    linear-gradient(
+      to left,
+      #4cd964,
+      #5ac8fa,
+      #007aff,
+      #34aadc,
+      #5856d6,
+      #ff2d55
+    );
+  content: "";
+  height: 5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+header .header-tips .wrapper {
+  width: 1000px;
+  height: 40px;
+  line-height: 40px;
+  margin: 0 auto;
+}
+header .header-tips .wrapper li {
+  display: inline-block;
+  float: right;
+  margin: 0 15px;
+}
+header .header-tips .wrapper li a {
+  color: #fff;
+  cursor: default;
+}
+header .menu {
+  background: #440404;
 }
 header .menu .menu-main {
   width: 1000px;
@@ -124,19 +161,23 @@ header .menu .menu-main {
 header .menu .menu-main li {
   display: inline-block;
   width: 100px;
-  height: 40px;
+  height: 50px;
+  line-height: 50px;
 }
 header .menu .menu-main a {
   display: inline-block;
   width: 100%;
   height: 100%;
-  line-height: 40px;
-  color: #666;
+  color: #fff;
 }
 header .menu .menu-main a:hover,
 header .menu .menu-main a.active {
   background-color: #e6aaaa;
   color: #ad0711;
+}
+footer ul li {
+  display: inline-block;
+  margin: 0 10px;
 }
 footer a {
   margin: 0 10px;
@@ -145,72 +186,122 @@ footer a:hover {
   color: #ad0711;
 }
 .solar-term {
-  width: 1400px;
-  margin: auto;
+  width: 1200px;
+  margin: 30px auto;
 }
-.solar-term .wrapper .main {
-  float: left;
+.solar-term .wrapper .calendaricity-main {
+  position: relative;
 }
-.solar-term .wrapper .main .calendaricity {
+.solar-term .wrapper .calendaricity-main .calendaricity {
   width: 100px;
   height: 30px;
   line-height: 30px;
+  display: inline-block;
   background-color: #debaba;
   border: 1px solid #deb887;
 }
-.solar-term .wrapper .main .calendaricity > a {
+.solar-term .wrapper .calendaricity-main .calendaricity > a {
   display: inline-block;
   width: 100%;
   height: 100%;
+  transition: 0.5s all;
 }
-.solar-term .wrapper .main .calendaricity > a:hover,
-.solar-term .wrapper .main .calendaricity > a.active {
-  background-color: #e6aaaa;
-  color: #6b2b2f;
+.solar-term .wrapper .calendaricity-main .calendaricity > a:hover,
+.solar-term .wrapper .calendaricity-main .calendaricity > a.active {
+  background-color: #8a4545;
+  color: #fff;
 }
-.solar-term .wrapper .main .calendaricity-content .wrapper {
+.solar-term .wrapper .calendaricity-main .calendaricity-content {
   display: inline-block;
   position: absolute;
-  width: 1200px;
-  top: 40px;
-  left: 130px;
+  width: 1100px;
+  top: 70px;
+  left: 0;
 }
-.solar-term .wrapper .main .calendaricity-content .wrapper li {
-  width: 600px;
+.solar-term .wrapper .calendaricity-main .calendaricity-content li {
+  width: 500px;
+  margin: 10px 25px;
+  display: inline-block;
+  float: left;
+  text-indent: 2em;
+  text-align: left;
+  background-color: rgba(226, 206, 206, 0.45);
 }
-.solar-term .wrapper .main .calendaricity-content .wrapper li.detail01 {
+.solar-term .wrapper .calendaricity-main .calendaricity-content li h2 {
+  text-align: center;
+  font-size: 18px;
+  text-indent: 0;
+  font-weight: bold;
+  color: #b74242;
+  background-color: rgba(165, 123, 123, 0.41);
+  transition: 0.5s all;
+}
+.solar-term .wrapper .calendaricity-main .calendaricity-content li h2:hover {
+  background-color: rgba(165, 123, 123, 0.8);
+}
+.solar-term .wrapper .calendaricity-main .calendaricity-content li div p {
+  margin: 0 10px;
+}
+.solar-term .wrapper .calendaricity-main .calendaricity-content li.detail01 {
   width: 690px;
-  position: relative;
-  left: 25%;
   height: 458px;
-  cursor: pointer;
-  background-repeat: no-repeat;
-  background-position: 50% 5%;
+  position: relative;
+  display: block;
+  border: none;
+  transform: translateX(-50%);
+  left: 50%;
+  text-align: center;
+  overflow: hidden;
   -webkit-box-shadow: -2px 8px 20px 15px rgba(0, 0, 0, 0.31);
   -moz-box-shadow: -2px 8px 20px 15px rgba(0, 0, 0, 0.31);
   box-shadow: -2px 8px 20px 15px rgba(0, 0, 0, 0.31);
+}
+.solar-term
+  .wrapper
+  .calendaricity-main
+  .calendaricity-content
+  li.detail01
+  > div {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  display: block;
+  background-size: contain;
   -webkit-transition: all 0.5s;
   -moz-transition: 0.5s all;
   -o-transition: 0.5s all;
 }
-.solar-term .wrapper .main .calendaricity-content .wrapper li.detail01:hover {
-  transform: scale(1.1);
+.solar-term
+  .wrapper
+  .calendaricity-main
+  .calendaricity-content
+  li.detail01
+  > div:hover {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -o-transform: scale(1.1);
   opacity: 0.8;
 }
 .solar-term
   .wrapper
-  .main
+  .calendaricity-main
   .calendaricity-content
-  .wrapper
-  li.detail01:hover
-  > div {
-  display: block;
+  li.detail01
+  > div:hover
+  p {
+  background-color: rgba(78, 11, 11, 0.8);
 }
-.solar-term .wrapper .main .calendaricity-content .wrapper li.detail01 > div {
-  position: absolute;
-  display: none;
+.solar-term
+  .wrapper
+  .calendaricity-main
+  .calendaricity-content
+  li.detail01
+  > div
+  p {
+  position: relative;
   top: 110px;
+  padding: 0 35px;
   font-size: 18px;
   color: #dec3c4;
-  background-color: rgba(78, 11, 11, 0.84);
+  background-color: rgba(78, 11, 11, 0.5);
 }
