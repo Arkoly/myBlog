@@ -13,12 +13,24 @@
           </a>
       </li>
     </ul>
+    <menu-sub v-if="sub.list && sub.list.length" 
+        v-for="(sub, index) in nav.list"
+        :index="index"
+        :sub="sub"
+        :id="'menuSub_'+sub.id"
+        :key="sub.id">
+    </menu-sub>
   </div>
 </template>
 
 <script>
 import $ from 'jquery'
+const menuSub = () => import(/* webpackChunkName: "./menuSub" */'./menuSub')
+
 export default {
+  components:{
+    menuSub
+  },
   data () {
     return {
       nav:{}

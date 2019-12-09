@@ -1,9 +1,9 @@
 <template>
   <div class="menu-sub">
       <ul class="menu-list-ul">
-          <li v-for="item in tips.list" 
+          <li v-for="item in sub.list" 
               :class="[item.clazz]">
-            <a>{{}}</a>
+            <a>{{item.name}}</a>
           </li>
       </ul>
   </div>
@@ -14,10 +14,11 @@ export default {
   props:['sub','index'],
   data () {
     return {
+
     }
   },
    created(){
-    
+    console.log(this.sub.list)
   }
 }
 </script>
