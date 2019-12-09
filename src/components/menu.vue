@@ -2,7 +2,8 @@
   <div id="menu" :class="[nav.clazz,]">
     <ul class="menu-main">
       <li v-for="item in nav.list"
-          :class="['menu-mian-list', item.clazz, {active: name===item.id}]"
+          :data-sub="item.id"
+          :class="['menu-main-list', item.clazz, {active: name===item.id}]"
           :key="item.id">
           <a
             :target=" item.target"
@@ -16,7 +17,7 @@
 </template>
 
 <script>
-
+import $ from 'jquery'
 export default {
   data () {
     return {
@@ -36,6 +37,11 @@ export default {
       });
     });
     console.log(this.$route.name)
+    console.log('datasub')
+    $(document).on('mouseenter','#menu .menu-main .menu-main-list',function(e){
+      let dataSub = $(this).data('sub');
+      console.log(dataSub);
+    })
   }
 }
 </script>

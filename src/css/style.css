@@ -98,11 +98,24 @@ a {
   color: #666;
   cursor: pointer;
 }
+[v-cloak] {
+  display: none;
+}
 body {
   background-color: #deb887;
 }
 body .main {
   position: relative;
+}
+body .router-view .fade-enter-active {
+  transition: opacity 0.5s ease;
+}
+body .router-view .fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+body .router-view .fade-enter,
+body .router-view .fade-leave-to {
+  opacity: 0;
 }
 body .router-view {
   position: relative;
@@ -211,7 +224,7 @@ footer a:hover {
   background-color: #8a4545;
   color: #fff;
 }
-.solar-term .wrapper .calendaricity-main .calendaricity-content {
+.solar-term .wrapper .calendaricity-main .calendaricity-content.on {
   display: inline-block;
   position: absolute;
   width: 1100px;

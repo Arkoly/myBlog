@@ -20,17 +20,35 @@ a {
   color: #666;
   cursor: pointer;
 }
+[v-cloak]{
+  display: none;
+}
 body{
   background-color: #deb887;
+  
   .main{
     position: relative;
   }
+  .router-view {
+    .fade-enter-active {
+        transition: opacity .5s ease;
+    }
+    .fade-leave-active {
+        transition: opacity .3s ease;
+    }
+    // .fade-leave-active below version 2.1.8
+    .fade-enter,
+    .fade-leave-to {
+        opacity: 0;
+    }
+}
   .router-view{
     position: relative;
     min-height: 800px;
     width: 100%;
     height: auto;
   }
+  
 }
 
 header{
@@ -128,11 +146,16 @@ footer{
         }
       }
       .calendaricity-content{
-          display: inline-block;
-          position: absolute;
-          width: 1100px;
-          top: 70px;
-          left: 0;
+          // transition: all .5s ease;
+          // opacity: 0;
+          &.on{
+            display: inline-block;
+            position: absolute;
+            width: 1100px;
+            top: 70px;
+            left: 0;
+            // opacity: 1;
+          }
           li{
             width: 500px;
             margin: 10px 25px;

@@ -8,18 +8,22 @@
            :class="[item.clazz, {active:index === currentIndex}]">
            {{item.name}}
         </a>
-        <div class="calendaricity-content" id="rightWrap"
-          v-if="index === currentIndex">
-          <ul class="wrapper"  >
-            <li v-for="item0 in item.details"  
-                :class="item0.clazz" >
-              <h2 v-if="!!item0.title">{{item0.title}}</h2>
-              <div :style="!!item0.img? 'background-image:url('+item0.img+')':''">
-                <p v-for="item1 in item0.data">{{item1.list}}</p>
-              </div>
-            </li>
-          </ul>
-        </div>
+        <template>
+          <transition name="fade" mode="out-in">
+            <div class="calendaricity-content on" id="rightWrap" 
+            v-if="index === currentIndex" >
+            <ul class="wrapper"  >
+              <li v-for="item0 in item.details"  
+                  :class="item0.clazz" >
+                <h2 v-if="!!item0.title" v-cloak>{{item0.title}}</h2>
+                <div :style="!!item0.img? 'background-image:url('+item0.img+')':''">
+                  <p v-for="item1 in item0.data">{{item1.list}}</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </transition>
+      </template>
       </li>
     </ul>
    </div>
