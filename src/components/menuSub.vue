@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import $ from 'jquery'
 export default {
   props:['sub','index'],
   data () {
@@ -17,8 +18,22 @@ export default {
 
     }
   },
-   created(){
-    console.log(this.sub.list)
+  methods:{
+    setPos(){
+      let menuliObj = $('.menu-main>li:eq('+this.index+')');
+       $('#subMenu_'+this.sub.id).css({
+         left: menuliObj.offset().left
+       })
+    }
+  },
+  mounted(){
+    setTimeout(() =>{
+      this.setPos();
+    },1000);
+    window.addEventListener('resize',() => {this.setPos()});
+  },
+  created(){
+    // console.log(this.sub.list)
   }
 }
 </script>

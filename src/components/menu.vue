@@ -17,7 +17,7 @@
         v-for="(sub, index) in nav.list"
         :index="index"
         :sub="sub"
-        :id="'menuSub_'+sub.id"
+        :id="'subMenu_'+sub.id"
         :key="sub.id">
     </menu-sub>
   </div>

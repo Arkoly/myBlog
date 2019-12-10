@@ -17,7 +17,6 @@ ul, li{
   box-sizing: border-box;
 }
 a {
-  color: #666;
   cursor: pointer;
 }
 [v-cloak]{
@@ -25,7 +24,7 @@ a {
 }
 body{
   background-color: #deb887;
-  
+  color: #666;
   .main{
     position: relative;
   }
@@ -98,11 +97,37 @@ header{
         width: 100%;
         height: 100%;
         color: #fff;
+        transition: all .2s;
         &:hover,&.active{
           background-color: #e6aaaa;
           color: #ad0711;
         }
       }
+    }
+
+    .menu-sub{
+      position: absolute;
+      display: none;
+      .menu-list-ul li{
+        box-sizing: border-box;
+        border: 1px solid #fff;
+        height: 40px;
+        line-height: 40px;
+        background: #d4aeae;
+        transition: all .5s;
+        &:hover{
+          background: #8a4545;
+          color: #fff;
+        }
+      }
+      &#subMenu_blog,
+      &#subMenu_solarTerm{
+        background-color: #dababa;
+        width: 100px;
+        cursor: pointer;
+        z-index: 11;
+      }
+
     }
   }
 }

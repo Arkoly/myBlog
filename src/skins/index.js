@@ -24,7 +24,13 @@ const menu = {
             id:'solarTerm',
             name:'二十四节气',
             text: '',
-            clazz: 'solar ROUTER_SOLAR_TERM'
+            clazz: 'solar ROUTER_SOLAR_TERM',
+            list:[ 
+                {name:'立春',id:'lc',clazz:'lichun0'},
+                {name:'芒种',id:'mz',clazz:'mangzhong0'},
+                {name:'白露',id:'bl',clazz:'bailu0'},
+                {name:'冬至',id:'dz',clazz:'dongzhi0'},
+            ]
         },
         {
             id:'doc',
