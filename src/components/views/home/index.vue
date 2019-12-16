@@ -1,12 +1,18 @@
 <template>
   <div class="home">
     {{msg}}
+  <comp-slider></comp-slider>
   </div>
 </template>
 
 <script>
+
+const compSlider = () => import(/* webpackChunkName: "./slider" */'./slider')
 export default {
   name: 'home',
+  components:{
+    compSlider
+  },
   data () {
     return {
       msg: 'Welcome to home page'
