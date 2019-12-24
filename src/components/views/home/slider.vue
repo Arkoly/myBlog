@@ -1,63 +1,212 @@
 <template>
-  <div>
-  
-    <div class="md-card-media">
-      <!-- swiper -->
-      <swiper :options="swiperOption">
-        <swiper-slide>Slide 1</swiper-slide>
-        <swiper-slide>Slide 2</swiper-slide>
-        <swiper-slide>Slide 3</swiper-slide>
-        <swiper-slide>Slide 4</swiper-slide>
-        <swiper-slide>Slide 5</swiper-slide>
-        <swiper-slide>Slide 6</swiper-slide>
-        <swiper-slide>Slide 7</swiper-slide>
-        <swiper-slide>Slide 8</swiper-slide>
-        <swiper-slide>Slide 9</swiper-slide>
-        <swiper-slide>Slide 10</swiper-slide>
-        <div class="swiper-pagination" slot="pagination"></div>
-      </swiper>
+  <div id="banner-container">
+    <div class="window" @mouseover="stop" @mouseleave="play">
+      <ul class="container" :style="containerStyle">
+        <li>
+          <img :src="sliders[sliders.length - 1].img" alt="">
+        </li>
+        <li v-for="(item, index) in sliders" :key="index">
+          <img :src="item.img" alt="">
+        </li>
+        <li>
+          <img :src="sliders[0].img" alt="">
+        </li>
+      </ul>
+      <ul class="direction">
+        <li class="left" @click="move(690, 1, speed)">
+          <svg class="icon" width="30px" height="30.00px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path fill="#ffffff" d="M481.233 904c8.189 0 16.379-3.124 22.628-9.372 12.496-12.497 12.496-32.759 0-45.256L166.488 512l337.373-337.373c12.496-12.497 12.496-32.758 0-45.255-12.498-12.497-32.758-12.497-45.256 0l-360 360c-12.496 12.497-12.496 32.758 0 45.255l360 360c6.249 6.249 14.439 9.373 22.628 9.373z"  /></svg>          
+        </li>
+        <li class="right" @click="move(690, -1, speed)">
+          <svg class="icon" width="30px" height="30.00px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path fill="#ffffff" d="M557.179 904c-8.189 0-16.379-3.124-22.628-9.372-12.496-12.497-12.496-32.759 0-45.256L871.924 512 534.551 174.627c-12.496-12.497-12.496-32.758 0-45.255 12.498-12.497 32.758-12.497 45.256 0l360 360c12.496 12.497 12.496 32.758 0 45.255l-360 360c-6.249 6.249-14.439 9.373-22.628 9.373z"  /></svg>          
+        </li>
+      </ul>
+      <ul class="dots">
+        <li v-for="(dot, i) in sliders" :key="i" 
+        :class="{dotted: i === (currentIndex-1)}"
+        :style="'background-image:url('+sliders[i].img+')'"
+        @click = "jump(i+1)"
+        >
+        </li>
+      </ul>
     </div>
   </div>
 </template>
 
 <script>
-import 'swiper/dist/css/swiper.css'
-
-import { swiper, swiperSlide } from 'vue-awesome-swiper'
-  export default {
-    components: {
-        swiper,
-        swiperSlide
+export default {
+  name: 'sliders',
+  props: {
+    initialSpeed: {
+      type: Number,
+      default: 30
     },
-    data() {
-      return {
-        swiperOption: {
-          direction: 'vertical',
-          pagination: {
-            el: '.swiper-pagination',
-            clickable: true
-          }
+    initialInterval: {
+      type: Number,
+      default: 4
+    }
+  },
+  data () {
+    return {
+      sliders:[
+        {
+          img:'/static/images/jieqi/bailu0.jpg'
+        },
+        {
+          img:'/static/images/jieqi/chunfen0.jpg'
+        },
+        {
+          img:'/static/images/jieqi/dahan0.jpg'
+        },
+        {
+          img:'/static/images/jieqi/daxue0.jpg'
         }
+      ],
+      currentIndex:1,
+      distance:-690,
+      transitionEnd: true,
+      speed: this.initialSpeed,
+      slidersLen: 1,
+    }
+  },
+  computed:{
+    containerStyle() {
+      return {
+        transform:`translate3d(${this.distance}px, 0, 0)`
       }
+    },
+    interval() {
+      return this.initialInterval * 1000
+    }
+  },
+  mounted() {
+    this.init()
+  },
+  methods:{
+    init() {
+      this.play()
+      window.onblur = function() { this.stop() }.bind(this)
+      window.onfocus = function() { this.play() }.bind(this)
+      this.slidersLen = this.sliders.length;
+    },
+    move(offset, direction, speed) {
+      if (!this.transitionEnd) return
+      this.transitionEnd = false
+      direction === -1 ? this.currentIndex += offset/690 : this.currentIndex -= offset/690
+      if (this.currentIndex > this.slidersLen) this.currentIndex = 1
+      if (this.currentIndex < 1) this.currentIndex = this.slidersLen
+
+      const destination = this.distance + offset * direction
+      this.animate(destination, direction, speed)
+    },
+    animate(des, direc, speed) {
+      if (this.temp) { 
+        window.clearInterval(this.temp)
+        this.temp = null 
+      }
+      this.temp = window.setInterval(() => {
+        if ((direc === -1 && des < this.distance) || (direc === 1 && des > this.distance)) {
+          this.distance += speed * direc
+        } else {
+          this.transitionEnd = true
+          window.clearInterval(this.temp)
+          this.distance = des
+          if (des < -690*(this.slidersLen)) this.distance = -690
+          if (des > -690) this.distance = -690*(this.slidersLen)
+        }
+      }, 20)
+    },
+    jump(index) {
+      const direction = index - this.currentIndex >= 0 ? -1 : 1
+      const offset = Math.abs(index - this.currentIndex) * 690
+      const jumpSpeed = Math.abs(index - this.currentIndex) === 0 ? this.speed : Math.abs(index - this.currentIndex) * this.speed 
+      this.move(offset, direction, jumpSpeed)
+    },
+    play() {
+      if (this.timer) {
+        window.clearInterval(this.timer)
+        this.timer = null
+      }
+      this.timer = window.setInterval(() => {
+        this.move(690, -1, this.speed)
+      }, this.interval)
+    },
+    stop() {
+      window.clearInterval(this.timer)
+      this.timer = null
     }
   }
+}
 </script>
 
-<style lang="scss">
-  .md-card-media{
-    position: relative;
-    .swiper-container{
-        height: 300px;
-        width: 1000px;
-        background: #ca5050;
-    }
-    .swiper-container-vertical > .swiper-pagination-bullets{
-      left: 0;
-    }
-    .swiper-pagination-bullet{
-      width: 100px;
-      height: 30px;
-      border-radius: 0;
-    }
+<style scoped>
+*{
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+}
+ol,ul{
+  list-style: none;
+}
+#banner-container{
+  text-align: center;
+  width: 690px;
+  height: 458px;
+}
+.window{
+  position:relative;
+  width:100%;
+  height:600px;
+  margin:0 auto;
+  overflow:hidden;
+}
+.container{
+  display:flex;
+  position:absolute;
+}
+.left, .right{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:50px;
+  height:50px;
+  background-color:rgba(0,0,0,.3);
+  border-radius:50%;
+  cursor:pointer;
+}
+.left{
+  left:3%;
+  padding-left:12px;
+  padding-top:10px;
+}
+.right{
+  right:3%;
+  padding-right:12px;
+  padding-top:10px;
+}
+img{
+  user-select: none;
+}
+.dots{
+    width: 100%;
+    position:absolute;
+    bottom:38px;
+    left:50%;
+    transform:translateX(-50%);
+    background: #4c1f1f;
   }
+.dots li{
+  display: inline-block;
+  width: 152px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 100px;
+  margin: 1px 8px;
+  cursor: pointer;
+  opacity: 0.6;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.dots .dotted{
+  opacity: 1;
+}
 </style>

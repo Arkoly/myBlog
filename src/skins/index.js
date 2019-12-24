@@ -44,12 +44,14 @@ const menu = {
 const headerTip={
     list:[
         {
-            clazz:'contact-qq',
-            textZh:'QQ：8989@qq.com'
+            clazz:'mycsdn',
+            textZh:'',
+            href: 'https://blog.csdn.net/u012183426'
         },
         {
-            clazz:'contact-phone',
-            textZh:'Phone:18888888888'
+            clazz:'mygithub',
+            textZh:'',
+            href: 'https://github.com/Arkoly/'
         }
     ]
 }

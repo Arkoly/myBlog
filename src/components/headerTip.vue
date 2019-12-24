@@ -2,8 +2,10 @@
   <div class="header-tips">
       <ul class="wrapper">
           <li v-for="item in tips.list" 
-              :class="[item.clazz]">
-            <a>{{item.textZh}}</a>
+              :class="item.clazz">
+            <a target="_blank"
+              :href="item.href"
+            >{{item.textZh}}</a>
           </li>
       </ul>
   </div>

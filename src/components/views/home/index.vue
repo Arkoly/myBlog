@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    {{msg}}
   <comp-slider></comp-slider>
   </div>
 </template>

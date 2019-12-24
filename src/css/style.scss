@@ -43,9 +43,10 @@ body{
 }
   .router-view{
     position: relative;
-    min-height: 800px;
+    min-height: 880px;
     width: 100%;
     height: auto;
+    padding-top: 30px;
   }
   
 }
@@ -74,11 +75,21 @@ header{
         display: inline-block;
         float: right;
         margin: 0 15px;
+        height: 40px;
+         width: 40px;
+         cursor: pointer;
         a{
           color: #fff;
           cursor: default;
         }
       }
+      
+    .mygithub{
+      background: url("https://github.com/favicon.ico") no-repeat center center;
+    }
+    .mycsdn{
+      background: url("https://www.csdn.net/favicon.ico") no-repeat center center;
+    }
     }
   }
   .menu{
@@ -144,10 +155,60 @@ footer{
     }
   }
 }
+.home{
+  width: 1000px;
+  height: auto;
+  margin: auto;
+}
 
+.blog{
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  .wrapper{
+    .blog-main {
+      li{
+        width: 100px;
+        height: 30px;
+        line-height: 30px;
+        display: inline-block;
+        >a{
+          display: inline-block;
+          height: 100%;
+          transition: 0.5s all;
+          text-decoration: none;
+          &:hover,&.active{
+            background-color: #8a4545;
+            color: #fff;
+          }
+        }
+        .blog-content{
+          position: absolute;
+          width: 1200px;
+          text-align: left;
+          left: 50%;
+          transform: translateX(-250px);
+          li{
+            width: 100%;    
+          }
+        }
+
+      }
+      >li{
+        background-color: #debaba;
+        border: 1px solid #deb887;
+        >a{
+          width: 100%;
+          line-height: 40px;
+          height: 40px;
+        }
+      }
+    }
+  }
+}
 .solar-term{
   width: 1200px;
-  margin: 30px auto;
+  margin: 0 auto;
   .wrapper{
     .calendaricity-main{
       // float: left;

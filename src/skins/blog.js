@@ -29,9 +29,7 @@ const tools=[
             {url:'',title:'' },
 
         ]
-    }
-]
-const learn=[
+    },
     {
         title:"学习网站推荐",
         list:[
@@ -69,4 +67,4 @@ const learn=[
     }
 ]
 
-export{tools, learn}
+export{tools }
