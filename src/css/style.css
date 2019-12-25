@@ -89,6 +89,9 @@ video {
   outline: none;
   vertical-align: baseline;
 }
+* {
+  box-sizing: border-box;
+}
 ul,
 li {
   list-style-type: none;
@@ -128,9 +131,13 @@ header {
   width: 100%;
   height: auto;
   position: relative;
+  background: #1c2327;
 }
 header .header-tips {
-  background: #1c2327;
+  width: 1000px;
+  height: 40px;
+  line-height: 40px;
+  margin: 0 auto;
 }
 header .header-tips::before {
   background: #000
@@ -151,28 +158,26 @@ header .header-tips::before {
   width: 100%;
 }
 header .header-tips .wrapper {
-  width: 1000px;
-  height: 40px;
-  line-height: 40px;
-  margin: 0 auto;
+  float: right;
 }
 header .header-tips .wrapper li {
   display: inline-block;
-  float: right;
-  margin: 0 15px;
+  margin: 5px 15px;
   height: 40px;
   width: 40px;
   cursor: pointer;
 }
+header .header-tips .wrapper li .iconfont {
+  font-size: 30px;
+  cursor: pointer;
+}
+header .header-tips .wrapper li .iconfont:hover {
+  background-color: #c18a8a;
+}
 header .header-tips .wrapper li a {
+  display: inline-block;
   color: #fff;
   cursor: default;
-}
-header .header-tips .wrapper .mygithub {
-  background: url("https://github.com/favicon.ico") no-repeat center center;
-}
-header .header-tips .wrapper .mycsdn {
-  background: url("https://www.csdn.net/favicon.ico") no-repeat center center;
 }
 header .menu {
   background: #440404;
@@ -234,8 +239,134 @@ footer a:hover {
 }
 .home {
   width: 1000px;
-  height: auto;
   margin: auto;
+}
+.home #banner-container {
+  float: left;
+  width: 690px;
+  height: auto;
+  display: inline-block;
+}
+.home #banner-container .window {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 2%;
+}
+.home #banner-container .container {
+  display: flex;
+  position: absolute;
+}
+.home #banner-container .left,
+.home #banner-container .right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.home #banner-container .left {
+  left: 3%;
+  padding-left: 12px;
+  padding-top: 10px;
+}
+.home #banner-container .right {
+  right: 3%;
+  padding-right: 12px;
+  padding-top: 10px;
+}
+.home #banner-container img {
+  user-select: none;
+}
+.home #banner-container .dots {
+  width: 100%;
+  position: absolute;
+  bottom: 38px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #4c1f1f;
+}
+.home #banner-container .dots li {
+  display: inline-block;
+  width: 152px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 100px;
+  margin: 1px 8px;
+  cursor: pointer;
+  opacity: 0.6;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.home #banner-container .dots .dotted {
+  opacity: 1;
+}
+.home .card {
+  float: right;
+}
+.card {
+  width: 265px;
+  height: 225px;
+  background: #fff;
+  display: inline-block;
+  border-radius: 2%;
+  background: url(/static/images//quote-bg.png) no-repeat top right #2a2a2a;
+}
+.card h2 {
+  font-size: 22px;
+  margin: 10px;
+  color: #89919a;
+  font-weight: normal;
+  padding-bottom: 10px;
+}
+.card p {
+  text-align: left;
+  font-size: 12px;
+  padding: 0 0 0 20px;
+  line-height: 28px;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+  color: #d0d2d4;
+}
+.card .linkmore {
+  margin: 15px;
+}
+.card .linkmore li {
+  display: inline-block;
+  width: 25%;
+  float: left;
+}
+.card .linkmore li a {
+  height: 53px;
+  display: block;
+  overflow: hidden;
+  box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.1),
+    inset 0px 1px 1px rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  margin: 0 5px;
+}
+.card .linkmore li .iconfont {
+  line-height: 53px;
+  text-align: center;
+}
+.card .linkmore li a.iconfont.icon-homepage {
+  color: #ef5509;
+  font-size: 36px;
+}
+.card .linkmore li a.iconfont.icon-youxiang {
+  color: #ff991a;
+  font-size: 36px;
+}
+.card .linkmore li a.iconfont.icon-qie {
+  font-size: 36px;
+}
+.card .linkmore li a.iconfont.icon-weixin {
+  color: #07af12;
+  font-size: 36px;
 }
 .blog {
   width: 1200px;
@@ -244,8 +375,6 @@ footer a:hover {
 }
 .blog .wrapper .blog-main li {
   width: 100px;
-  height: 30px;
-  line-height: 30px;
   display: inline-block;
 }
 .blog .wrapper .blog-main li > a {
@@ -270,10 +399,13 @@ footer a:hover {
   width: 100%;
 }
 .blog .wrapper .blog-main > li {
-  background-color: #debaba;
-  border: 1px solid #deb887;
+  height: 40px;
+  line-height: 40px;
 }
 .blog .wrapper .blog-main > li > a {
+  color: #fff;
+  background-color: #230404;
+  border: 1px solid #deb887;
   width: 100%;
   line-height: 40px;
   height: 40px;

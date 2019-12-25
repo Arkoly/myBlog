@@ -1,12 +1,16 @@
 <template>
-  <div class="home">
-    {{msg}}
+  <div class="doc">
+    <comp-card></comp-card>
   </div>
 </template>
 
 <script>
+const compCard = () => import(/* webpackChunkName: "./slider" */'../../card')
+
 export default {
-  name: 'home',
+  components:{
+    compCard
+  },
   data () {
     return {
       msg: 'Welcome to DOC page'

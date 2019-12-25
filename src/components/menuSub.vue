@@ -33,7 +33,9 @@ export default {
     window.addEventListener('resize',() => {this.setPos()});
   },
   created(){
-    // console.log(this.sub.list)
+    setTimeout(() =>{
+      this.setPos();
+    },1000);
   }
 }
 </script>

@@ -49,7 +49,6 @@ export default {
       });
     });
     console.log(this.$route.name)
-    console.log('datasub')
     $(document).on('mouseenter','#menu .menu-main .menu-main-list',function(e){
       let dataSub = $(this).data('sub');
       console.log(dataSub);

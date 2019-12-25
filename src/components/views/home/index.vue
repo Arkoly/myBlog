@@ -1,16 +1,19 @@
 <template>
   <div class="home">
-  <comp-slider></comp-slider>
+     <comp-slider></comp-slider>
+     <comp-card></comp-card>
   </div>
 </template>
 
 <script>
 
 const compSlider = () => import(/* webpackChunkName: "./slider" */'./slider')
+const compCard = () => import(/* webpackChunkName: "../../card" */'../../card')
 export default {
   name: 'home',
   components:{
-    compSlider
+    compSlider,
+    compCard
   },
   data () {
     return {

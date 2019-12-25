@@ -40,16 +40,46 @@ const menu = {
         }
     ]
 }
+const card={
+    name:'我的名片',
+    career:"职业：WEB网页设计",
+    address:'住址：四川省-成都市',
+    email:'邮件：1291636059@qq.com',
+    list:[
+        {
+            clazz:'icon iconfont icon-homepage ROUTER_HOME ' ,
+            title:'网站地址',
+            href:''
+        },
+        {
+            clazz:'icon iconfont icon-youxiang',
+            title:'我的邮箱',
+            href:''
+        },
+        {
+            clazz:'icon iconfont icon-qie',
+            title:'联系我',
+            href:'tencent://message/?uin=1291636059&amp;Site=web&amp;Menu=yes'
+        },
+        {
+            clazz:'icon iconfont icon-weixin',
+            title:'关注我的微信',
+            href:''
+        },
+    ]
+}
 
 const headerTip={
     list:[
         {
             clazz:'mycsdn',
+            iClass:'icon iconfont icon-csdn',
             textZh:'',
             href: 'https://blog.csdn.net/u012183426'
         },
         {
             clazz:'mygithub',
+            iClass:'icon iconfont icon-github',
             textZh:'',
             href: 'https://github.com/Arkoly/'
         }
@@ -70,4 +100,4 @@ const footer = {
     ]
 }
 
-export{menu, headerTip, footer}
+export{menu, headerTip, footer, card}
