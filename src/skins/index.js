@@ -42,7 +42,7 @@ const menu = {
 }
 const card={
     name:'我的名片',
-    career:"职业：WEB网页设计",
+    career:"职业：前端开发工程师",
     address:'住址：四川省-成都市',
     email:'邮件：1291636059@qq.com',
     list:[
@@ -54,7 +54,7 @@ const card={
         {
             clazz:'icon iconfont icon-youxiang',
             title:'我的邮箱',
-            href:''
+            href:'http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=zfz-9Pz7-vv9_PSNvLzjrqKg'
         },
         {
             clazz:'icon iconfont icon-qie',
@@ -100,4 +100,5 @@ const footer = {
     ]
 }
 
-export{menu, headerTip, footer, card}
+const perInfo={}
+export{menu, headerTip, footer, card, perInfo}

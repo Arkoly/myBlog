@@ -6,7 +6,7 @@
     <p>{{card.email}}</p>
     <ul class="linkmore">
       <li v-for="item in card.list">
-        <a :class="item.clazz" :title="item.title" :href="(!!item.href) && item.href"></a>
+        <a :class="item.clazz" :title="item.title" :href="(!!item.href) && item.href" target="_blank"></a>
       </li>
     </ul>
   </div>

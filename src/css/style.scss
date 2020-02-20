@@ -30,6 +30,7 @@ body{
   color: #666;
   .main{
     position: relative;
+    min-width: 1200px;
   }
   .router-view {
     .fade-enter-active {
@@ -103,9 +104,13 @@ header{
         //     fill: currentColor;
         // }
         a{
+          width: 40px;
+          height:40px;
           display: inline-block;
           color: #fff;
           cursor: default;
+          text-decoration: none;
+          border-radius: 50%;
         }
       }
       
@@ -283,11 +288,15 @@ footer{
       float: left;
       a{
         height: 53px;
+        text-decoration: none;
         display: block;
         overflow: hidden;
         box-shadow: 0px 1px 0px rgba(255,255,255,.1), inset 0px 1px 1px rgba(0,0,0,.7);
         border-radius: 50%;
         margin: 0 5px;
+      }
+      a:hover{
+        background: #333333;
       }
       .iconfont{
         line-height: 53px;
@@ -465,5 +474,12 @@ footer{
        
       }
     }
+  }
+}
+.doc{
+  .card{
+    position: absolute;
+    left: 50%;
+    margin-left: 380px;
   }
 }
