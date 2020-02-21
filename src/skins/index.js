@@ -14,10 +14,10 @@ const menu = {
             text: '',
             clazz: 'blog ROUTER_BLOG',
             list:[ 
-                {name:'css设计',id:'css',clazz:'item-css'},
-                {name:'js设计',id:'js',clazz:'item-js'},
-                {name:'html设计',id:'html',clazz:'item-html'},
-                {name:'vue设计',id:'vue',clazz:'item-vue'},
+                {name:'css设计',id:'css',clazz:'item-css ROUTER_BLOG'},
+                {name:'js设计',id:'js',clazz:'item-js ROUTER_BLOG'},
+                {name:'html设计',id:'html',clazz:'item-html ROUTER_BLOG'},
+                {name:'vue设计',id:'vue',clazz:'item-vue ROUTER_BLOG'},
             ]
         },
         {
@@ -26,10 +26,10 @@ const menu = {
             text: '',
             clazz: 'solar ROUTER_SOLAR_TERM',
             list:[ 
-                {name:'立春',id:'lc',clazz:'lichun0'},
-                {name:'芒种',id:'mz',clazz:'mangzhong0'},
-                {name:'白露',id:'bl',clazz:'bailu0'},
-                {name:'冬至',id:'dz',clazz:'dongzhi0'},
+                {name:'立春',id:'lc',clazz:'lichun0 ROUTER_SOLAR_TERM'},
+                {name:'芒种',id:'mz',clazz:'mangzhong0 ROUTER_SOLAR_TERM'},
+                {name:'白露',id:'bl',clazz:'bailu0 ROUTER_SOLAR_TERM'},
+                {name:'冬至',id:'dz',clazz:'dongzhi0 ROUTER_SOLAR_TERM'},
             ]
         },
         {
