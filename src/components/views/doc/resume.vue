@@ -83,9 +83,9 @@
                             <span class="exp-project_name">个人技术实践网站</span>
                         </p>
                         <p class="exp-list_time">2019.11-2019.11</p>
-                        <div class="exp-project_des"><p>搭建Vue的脚手架，实现SPA页面。涉及的技术有Vue+VueRouter+webpack+sass+glup。<br /></p></div>
+                        <div class="exp-project_des"><p>搭建Vue的脚手架，实现SPA页面。涉及的技术有Vue+VueRouter+webpack+sass。<br /></p></div>
                         <div class="exp-list_content">
-                            <p>在自己的个人项目中实现vue组件化、模块化。高度复用组件。深入理解vue。<br /></p>
+                            <p>在自己的个人项目中实现vue组件化、模块化。复用组件。深入理解vue。<br /></p>
                         </div>
                         <p class="exp-project_url">项目链接: http://xaire.wang/#/</p>
                     </li>

@@ -15,6 +15,7 @@ function getRouterPath(el){
     if($(el).hasClass('ROUTER_BLOG')) return '/blog';
     if($(el).hasClass('ROUTER_DOC')) return '/doc';
     if($(el).hasClass('ROUTER_SOLAR_TERM')) return '/solarTerm';
+    if($(el).hasClass('ROUTER_THREE')) return '/three';
 }
 
 //导航菜单的鼠标mouseenter事件

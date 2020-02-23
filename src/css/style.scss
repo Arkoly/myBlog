@@ -30,7 +30,7 @@ body{
   color: #666;
   .main{
     position: relative;
-    min-width: 1200px;
+    // min-width: 1200px;
   }
   .router-view {
     .fade-enter-active {
@@ -326,27 +326,46 @@ footer{
   position: relative;
   .wrapper{
     .blog-main {
+      >li>a{
+        &:hover,&.active{
+          background-color: #8a4545;
+          color: #fff;
+        }
+      }
       li{
-        width: 100px;
+        width: 120px;
         display: inline-block;
-        >a{
+        a{
+          color: #fff;
           display: inline-block;
           height: 100%;
           transition: 0.5s all;
           text-decoration: none;
-          &:hover,&.active{
-            background-color: #8a4545;
-            color: #fff;
-          }
         }
         .blog-content{
           position: absolute;
-          width: 1200px;
           text-align: left;
           left: 50%;
-          transform: translateX(-250px);
+          transform: translateX(-300px);
           li{
-            width: 100%;    
+            width: 100%;  
+            background: #555f5f;
+            padding: 0 10px;  
+            &::after{
+              content: '';
+              width: 100%;
+              height: 3px;
+              left: 0;
+              position: absolute;
+              display: inline-block;
+              background: #9c968d;
+            }
+            &:hover{
+              background: #bdcccc;
+              a{
+                color:#666;
+              }
+            }
           }
         }
 
@@ -373,9 +392,11 @@ footer{
     .calendaricity-main{
       // float: left;
       position: relative;
+      text-align: left;
       .calendaricity{
         width: 100px;
         height: 30px;
+        text-align: center;
         line-height: 30px;
         display: inline-block;
         background-color: #debaba;
@@ -481,5 +502,135 @@ footer{
     position: absolute;
     left: 50%;
     margin-left: 380px;
+  }
+}
+
+//移动端适配
+@media screen and (min-width: 960px) and (max-width: 1199px){
+  body{
+    .blog{
+      .blog-content{
+        width: 800px;
+        -webkit-transform: translateX(-300px);
+        transform: translateX(-300px);
+      }
+    }
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 959px){
+  body{
+    header {
+      .header-tips{
+        width:100%;
+      }
+      .menu .menu-main{
+        width: 100%;
+      }
+    }
+    .home{
+      width:100%;
+      #banner-container{
+        float: none;
+      }
+      .card{
+        float: none;
+      }
+    }
+    .blog{
+      width: 100%;
+      .wrapper .blog-main li .blog-content{
+        width: 600px;
+        -webkit-transform: translateX(-300px);
+        transform: translateX(-300px);
+      }
+    }
+    .solar-term{
+      width: 100%;
+      .wrapper .calendaricity-main {
+        padding-left: 40px;
+        .calendaricity-content.on{
+          width: 100%;
+          top: 135px;
+          left: -25px;
+          li:not(.detail01){
+            left: 50%;
+            transform: translateX(-54%);
+            position: relative;
+          }
+        }
+      }
+    }
+    .doc .card{
+      display: none;
+    }
+  }
+}
+@media screen and (max-width: 767px){
+  body{
+    font-size: 12px;
+    .router-view{
+      min-height: 540px;
+    }
+    header {
+      .header-tips{
+        width:100%;
+      }
+      .menu .menu-main{
+        width: 100%;
+        li{
+          width: 48px;
+          &:nth-child(3){
+            width: 90px;
+          }
+        }
+      }
+    }
+    .home{
+      width:100%;
+      #banner-container{
+        display: none;
+      }
+      .card{
+        float: none;
+      }
+    }
+    .blog{
+      width: 100%;
+      .wrapper .blog-main li{
+        width: 75px;
+        .blog-content{
+          width: 100%;
+          transform: translateX(-188px);
+        }
+      }
+    }
+    .solar-term{
+      width: 100%;
+      .wrapper .calendaricity-main {
+        padding-left: 40px;
+        .calendaricity-content.on{
+          width: 100%;
+          top: 250px;
+          left: -10px;
+          li{
+            width: 80%;
+            margin: 10px 8px;
+          }
+          li:not(.detail01){
+            left: 50%;
+            transform: translateX(-50%);
+            position: relative;
+          }
+        }
+      }
+    }
+    .doc {
+      .resume-main{
+        display: none;
+      }
+      .card{
+        margin-left: -140px;
+      }
+    }
   }
 }
