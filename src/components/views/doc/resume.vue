@@ -11,7 +11,7 @@
                 <p class="basic-name female">王红秀</p>
             </div>
             <p class="basic-self">
-                    <span class="basic-exp">4年工作经验 / 1年Vue开发经验 </span>
+                    <span class="basic-exp">4年工作经验 / 2年web前端开发经验 </span>
                     <span class="basic-edu">本科 . 统招  
                           / 
                     </span>
@@ -30,7 +30,7 @@
             <p class="basic-self">
               <span>CSDN:<a>https://blog.csdn.net/u012183426</a></span>
               <br/>
-              <span>github:<a>https://github.com/Arkoly/</a></span>
+              <span>项目链接:<a>http://xaire.wang/#/</a></span>
             </p>
         </div>
     </div>
@@ -52,11 +52,10 @@
         </div>
         <div class="per-self_content">
           <div class="per-self_des">
-              本人有4年的软件行业工作经验，包括1年Vue开发经验，3年软件测试经验。 <br/>
-              有在工程化的项目中进行模块化，组件化开发的经验。 <br/>
-              阅读过vue源码，熟悉vue全家桶。 <br/>
-              熟悉css、html5、js等前端知识。 <br/>
-              了解nodejs，python后端语言。熟悉git的基本操作。 <br/>
+                本人有2年前端开发经验。 <br/>
+                能熟练开发vue组件，熟悉vue全家桶。 <br/>
+                能熟练的运用javaScript、css、html5、jQuery等技术，渲染web页面。 <br/>
+                了解nodejs，python后端语言。熟悉git的基本操作。 <br/>
           </div>
         </div>
     </div>
@@ -70,12 +69,13 @@
             <ol class="pro-exp_group">
                     <li class="pro-exp_list">
                         <p class="exp-list_title">
-                            <span class="exp-project_name">前后端分离项目</span>
+                            <span class="exp-project_name">公司承接的项目</span>
                         </p>
-                        <p class="exp-list_time">2019.01-2019.12</p>
-                        <div class="exp-project_des"><p>负责PC端浏览器的网页开发，根据客户需求完成相关的网页设计，技术栈vue2.0+webpack+nodejs+sass。相关工具：svn、vscode、禅道</p></div>
-                        <div class="exp-list_content">
-                            <p>分析定位并解决BUG，包括页面特效，浏览器兼容等问题。<br /></p>
+                        <p class="exp-list_time">2018.01-2019.12</p>
+                        <div class="exp-project_des">
+                            <p>
+                                vue2.* +sass，定制前端页面模板。
+                            </p>
                         </div>
                     </li>
                     <li class="pro-exp_list">
@@ -109,7 +109,7 @@
             </div>
             <ol class="work-exp_group">
               <li class="work-exp_list">
-                  <p class="exp-list_time">2018.06-2019.12</p>
+                  <p class="exp-list_time">2018.01-2019.12</p>
                   <div class="exp-list_top">
                       <div class="exp-list_right">
                           <strong class="exp-list_title">
@@ -126,15 +126,14 @@
                           <span class="tagboard-tag">Web前端</span>
                   </div>
                   <div class="exp-list_content">
-                      <p>2018.6-2018.12: 从事前端页面和后台管理系统的测试工作<br/>
-                        2019.1-2019.12:在公司内转到前端开发岗位，工作内容： 根据客户的需求资料，完成前端页面编写。
-                        持续优化vue项目的结构，开发复用性高的组件。
-                      <br />
-                      </p>
+                     <p>1.根据客户的需求资料，完成前端页面编写，参与后期网站的维护。<br />
+                        2.更新公司vue项目的结构，将css、js文件分模块处理。<br />
+                        3.实现vue通用组件，定制出前端页面的公用模板。达到模板复用的目的。<br />
+                    </p>
                   </div>
               </li>
               <li class="work-exp_list">
-                  <p class="exp-list_time">2016.10-2018.06</p>
+                  <p class="exp-list_time">2016.10-2018.01</p>
                   <div class="exp-list_top">
                       <div class="exp-list_right">
                           <strong class="exp-list_title">
