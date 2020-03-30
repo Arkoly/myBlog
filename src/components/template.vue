@@ -6,7 +6,7 @@
       </div>
       <com-headerTip></com-headerTip>
       <span id="logo" class="ROUTER_HOME"></span>
-      <nav class="menu"  @click="addMenu">
+      <nav class="menu" @click="addMenu">
          <comp-menu></comp-menu>
       </nav>
     </header>
@@ -30,7 +30,8 @@ const compFooter = () => import(/* webpackChunkName: "components/footer" */'@/co
 export default {
   data () {
     return {
-      isMenuList: true
+      isMenuList: true,
+      vwidth:true
     }
   },
   components:{
@@ -38,19 +39,66 @@ export default {
     compMenu,
     compFooter
   },
-
+  computed:{
+    displayStyle(){
+      return {
+        display:`block`
+      }
+    }
+  },
   methods:{
     addMenu(){
       // this.isMenuList = !this.isMenuList
-      if(this.isMenuList){
-        $('.menu').css("display","block")
-        this.isMenuList = false
+      setTimeout(()=>{
+          if(!this.vwidth){
+            if(this.isMenuList){
+            $('.menu').css("display","block")
+            this.isMenuList = false
 
-      }else if(!this.isMenuList){
-        $('.menu').css("display","none")
-        this.isMenuList = true
+          }else if(!this.isMenuList){
+            $('.menu').css("display","none")
+            this.isMenuList = true
+          }
+        }else{
+          return
+        }
+      },0)
+    },
+    setWidth(){
+      this.vwidth = parseInt($('#app').width()) >= 1100
+      if(this.vwidth){
+        $('.menu').css("display","block")
       }
+      // console.log(this.vwidth )
+      // if(this.vwidth){
+      //     $('.menu').css("display","block")
+      //   }else if(!this.vwidth){
+      //     $('.menu').css("display","none")
+      // }
+
+      // this.isMenuList = true
     }
+  },
+  mounted(){
+    setTimeout(() =>{
+      this.setWidth();
+    },1000);
+    window.addEventListener('resize',() => {
+      this.setWidth()
+      
+    //   console.log('resized');
+    // console.log(this.vwidth);
+    });
+    // console.log('mounted');
+    // console.log(this.vwidth);
+    
+  },
+  created(){
+    setTimeout(() =>{
+      this.setWidth();
+    //   console.log('created');
+    // console.log(this.vwidth);
+    },1000);
   }
 }
 </script>
