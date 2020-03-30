@@ -1,8 +1,12 @@
 <template>
   <div :class="['main']">
     <header>
+      <div id="navBox" @click="addMenu">
+        <span class="navIcon"></span>
+      </div>
       <com-headerTip></com-headerTip>
-      <nav class="menu">
+      <span id="logo" class="ROUTER_HOME"></span>
+      <nav class="menu"  @click="addMenu">
          <comp-menu></comp-menu>
       </nav>
     </header>
@@ -18,6 +22,7 @@
 </template>
 
 <script>
+import $ from 'jquery'
 
 const comHeaderTip = () => import(/* webpackChunkName: "components/headerTip" */'@/components/headerTip')
 const compMenu = () => import(/* webpackChunkName: "components/menu" */'@/components/menu')
@@ -25,7 +30,7 @@ const compFooter = () => import(/* webpackChunkName: "components/footer" */'@/co
 export default {
   data () {
     return {
-      
+      isMenuList: true
     }
   },
   components:{
@@ -33,7 +38,20 @@ export default {
     compMenu,
     compFooter
   },
-  
+
+  methods:{
+    addMenu(){
+      // this.isMenuList = !this.isMenuList
+      if(this.isMenuList){
+        $('.menu').css("display","block")
+        this.isMenuList = false
+
+      }else if(!this.isMenuList){
+        $('.menu').css("display","none")
+        this.isMenuList = true
+      }
+    }
+  }
 }
 </script>
 

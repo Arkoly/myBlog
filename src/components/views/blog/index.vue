@@ -1,29 +1,14 @@
 <template>
-  <div class="blog">
+  <div class="blog-page">
    <div class="wrapper">
-    <ul class="blog-main " id="topWrap">
-      <li v-for="(item, index) in tools"
-          :class="[item.clazz, {active:index === currentIndex}]">
-        <a @click="getLiIndex(index)"
-           :class="[item.clazz, {active:index === currentIndex}]">
-           {{item.title}}
-        </a>
-        <template>
-          <transition name="fade" mode="out-in">
-            <div class="blog-content on" id="bottomWrap" 
-            v-if="index === currentIndex" >
-            <ul class="wrapper"  >
-              <li v-for="item0 in item.list"  
-                  v-if="!!item0.url"
-                  :class="item0.clazz" >
-                <a  :href="item0.url" v-cloak target="_blank">{{item0.title}} </a>
-              </li>
-            </ul>
-          </div>
-        </transition>
-      </template>
-      </li>
-    </ul>
+     <h2>{{blogData.blogTags}}</h2>
+     <article>
+       <h3 :class="'content-title'">{{blogData.blogTitle}}</h3>
+       <div class="details">
+         <p v-for="item in blogData.details">{{item.list}}</p>
+       </div>
+       <button @click="addCount">点赞！{{count}}</button>
+     </article>
    </div>
   </div>
 </template>
@@ -31,16 +16,16 @@
 <script>
 import $ from 'jquery';
 export default {
-  name: 'home',
+  name: 'blog',
   data () {
     return {
-      tools: {},
-      currentIndex:0   //用于接收当前点击的li的下标
+      blogData: {},
+      count:0   //用于接收当前点击的li的下标
     }
   },
   methods:{
-    getLiIndex(i){
-       this.currentIndex = i;
+    addCount(i){
+       this.count = this.count+1;
     },
   },
   computed:{
@@ -49,9 +34,10 @@ export default {
   },
   created(){
     import(/* webpackChunkName: "[request]" */ `../../../skins/blog.js`).then(mod => {
-      let data = mod.tools;
+      let data = mod.blogData;
       this.$nextTick(()=>{
-        this.tools = data;
+        this.blogData = data;
+        this.count = this.blogData.count
       });
     });
     

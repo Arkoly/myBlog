@@ -1,19 +1,29 @@
 <template>
-  <div class="home">
-     <comp-slider></comp-slider>
-     <comp-card></comp-card>
+  <div class="home-page">
+     <div class="left-box">
+       <comp-slider></comp-slider>
+       <comp-linkBox></comp-linkBox>
+       <comp-contentBox></comp-contentBox>
+     </div>
+     <div class="right-box">
+       <comp-card></comp-card>
+     </div>
   </div>
 </template>
 
 <script>
 
 const compSlider = () => import(/* webpackChunkName: "./slider" */'./slider')
+const compContentBox = () => import(/* webpackChunkName: "./contentBox" */'./contentBox')
 const compCard = () => import(/* webpackChunkName: "../../card" */'../../card')
+const compLinkBox = () => import(/* webpackChunkName: "../../linkBox" */'../../linkBox')
 export default {
   name: 'home',
   components:{
     compSlider,
-    compCard
+    compCard,
+    compLinkBox,
+    compContentBox
   },
   data () {
     return {

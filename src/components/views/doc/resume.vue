@@ -1,184 +1,43 @@
 <template>
-  <div id="container">
-    <!-- 基本信息 -->
-    <div class="basic" id="baseInfo">
-        <div class="basic-photo">
-            <img class="mr_headimg user-avatar" id="userpic" src="/static/images/myphoto1.jpg" alt="个人头像" width="100" height="140"
-            />
-        </div>
-        <div class="basic-info">
-            <div class="basic-name-area">
-                <p class="basic-name female">王红秀</p>
-            </div>
-            <p class="basic-self">
-                    <span class="basic-exp">4年工作经验 / 2年web前端开发经验 </span>
-                    <span class="basic-edu">本科 . 统招  
-                          / 
-                    </span>
-                    <span class="basic-age">25岁</span>
-            </p>
-            <p>
-              <span class="basic-tel">
-                  <i class="basic-tel_icon"></i>
-                  <span>18380415079</span>
-              </span>
-              <span class="basic-email">
-                  <i class="basic-email_icon"></i>
-                  <span>1291636059@qq.com</span>
-              </span>
-            </p>
-            <p class="basic-self">
-              <span>CSDN:<a>https://blog.csdn.net/u012183426</a></span>
-              <br/>
-              <span>项目链接:<a>http://xaire.wang/#/</a></span>
-            </p>
-        </div>
-    </div>
-    <!-- /基本信息 -->
-
-    <!-- 自我描述 -->
-    <div class="mr-template per" id="perAbility">
-        <div class="mr-template_title">
-            <span>个人优势</span>
-        </div>
-        <div class="tagboard integrative-tag">
-            <div class="integrative-tag_content">
-              <span class="tagboard-tag">责任心</span>
-              <span class="tagboard-tag">适应能力</span>
-              <span class="tagboard-tag">沟通协调能力</span>
-              <span class="tagboard-tag">执行力</span>
-              <span class="tagboard-tag">团队精神</span>
-            </div>
-        </div>
-        <div class="per-self_content">
-          <div class="per-self_des">
-                本人有2年前端开发经验。 <br/>
-                能熟练开发vue组件，熟悉vue全家桶。 <br/>
-                能熟练的运用javaScript、css、html5、jQuery等技术，渲染web页面。 <br/>
-                了解nodejs，python后端语言。熟悉git的基本操作。 <br/>
-          </div>
-        </div>
-    </div>
-    <!-- /自我描述 -->
-
-    <!-- 项目经历 -->
-        <div class="mr-template pro-exp" id="proExp">
-            <div class="mr-template_title">
-                <span>项目经历</span>
-            </div>
-            <ol class="pro-exp_group">
-                    <li class="pro-exp_list">
-                        <p class="exp-list_title">
-                            <span class="exp-project_name">公司承接的项目</span>
-                        </p>
-                        <p class="exp-list_time">2018.01-2019.12</p>
-                        <div class="exp-project_des">
-                            <p>
-                                vue2.* +sass，定制前端页面模板。
-                            </p>
+        <div id="container">
+            <!-- 基本信息 -->
+            <div class="left-wrap">
+                <div class="basic  " id="baseInfo">
+                    <div class="basic-photo">
+                        <img class="mr_headimg user-avatar" id="userpic" src="" width="100" height="140" alt="头像"
+                        />
+                    </div>
+                    <div class="basic-info">
+                        <div class="basic-name-area">
+                            <p class="basic-name female">个人简历</p>
                         </div>
-                    </li>
-                    <li class="pro-exp_list">
-                        <p class="exp-list_title">
-                            <span class="exp-project_name">个人技术实践网站</span>
+                        <p class="basic-self">
+                                <span class="basic-exp">4年工作经验</span>
+                                <span class="basic-edu">本科 . 统招  
+                                        / 
+                                </span>
+                                <span class="basic-age">24岁</span>
                         </p>
-                        <p class="exp-list_time">2019.11-2019.11</p>
-                        <div class="exp-project_des"><p>搭建Vue的脚手架，实现SPA页面。涉及的技术有Vue+VueRouter+webpack+sass。<br /></p></div>
-                        <div class="exp-list_content">
-                            <p>在自己的个人项目中实现vue组件化、模块化。复用组件。深入理解vue。<br /></p>
-                        </div>
-                        <p class="exp-project_url">项目链接: http://xaire.wang/#/</p>
-                    </li>
-                    <li class="pro-exp_list">
-                        <p class="exp-list_title">
-                            <span class="exp-project_name">Element+vue</span>
+                        <p>
+                            <span class="basic-tel">
+                                <i class="basic-tel_icon"></i>
+                                <span>183***</span>
+                            </span>
+                            <span class="basic-email">
+                                <i class="basic-email_icon"></i>
+                                <span>129***@qq.com</span>
+                            </span>
                         </p>
-                        <p class="exp-list_time">2019.12-2019.12</p>
-                        <div class="exp-project_des"><p>快餐收银系统<br /></p></div>
-                        <div class="exp-list_content">
-                            <p>搭建vue-cli脚手架，使用element和阿里的在线图标实现快速布局，利用axios获取服务器上数据（使用mock模拟服务端的数据）。完成订餐系统的点餐和挂单功能。<br /></p>
-                        </div>
-                        <p class="exp-project_url">项目链接: https://github.com/Arkoly/AwesmonePosTest</p>
-                    </li>
-            </ol>
-        </div>
-    <!-- 工作经历 -->
-        <div class="mr-template work-exp" id="workExp">
-            <div class="mr-template_title">
-                <span>工作经历</span>
-            </div>
-            <ol class="work-exp_group">
-              <li class="work-exp_list">
-                  <p class="exp-list_time">2018.01-2019.12</p>
-                  <div class="exp-list_top">
-                      <div class="exp-list_right">
-                          <strong class="exp-list_title">
-                              <span>北京鼎兴科技</span>
-                                ／
-                                  <span>技术部</span>
-                          </strong>
-                          <p>WEB前端</p>
-                      </div>
-                  </div>
-                  <div class="tagboard">
-                          <span class="tagboard-tag">vue</span>
-                          <span class="tagboard-tag">HTML5</span>
-                          <span class="tagboard-tag">Web前端</span>
-                  </div>
-                  <div class="exp-list_content">
-                     <p>1.根据客户的需求资料，完成前端页面编写，参与后期网站的维护。<br />
-                        2.更新公司vue项目的结构，将css、js文件分模块处理。<br />
-                        3.实现vue通用组件，定制出前端页面的公用模板。达到模板复用的目的。<br />
-                    </p>
-                  </div>
-              </li>
-              <li class="work-exp_list">
-                  <p class="exp-list_time">2016.10-2018.01</p>
-                  <div class="exp-list_top">
-                      <div class="exp-list_right">
-                          <strong class="exp-list_title">
-                              <span>Symbio</span>
-                                ／
-                                  <span>项目部</span>
-                          </strong>
-                          <p>测试工程师</p>
-                      </div>
-                  </div>
-                  <div class="tagboard">
-                          <span class="tagboard-tag">功能测试</span>
-                          <span class="tagboard-tag">嵌入式软件测试</span>
-                          <span class="tagboard-tag">兼容性测试</span>
-                  </div>
-                  <div class="exp-list_content">
-                      <p>测试智能手表软件和相应的PC、Android、ios平台应用软件功能界面及数据<br /></p>
-                  </div>
-              </li>
-              <li class="work-exp_list">
-                  <p class="exp-list_time">2015.11-2016.06</p>
-                  <div class="exp-list_top">
-                      <div class="exp-list_right">
-                          <strong class="exp-list_title">
-                              <span>敦阳泰克成都科技有限公司</span>
-                                ／
-                                  <span>测试部</span>
-                          </strong>
-                          <p>自动化测试</p>
-                      </div>
-                  </div>
-                  <div class="tagboard">
-                          <span class="tagboard-tag">自动化测试</span>
-                          <span class="tagboard-tag">手机测试</span>
-                          <span class="tagboard-tag">UI测试</span>
-                  </div>
-                  <div class="exp-list_content">
-                      <p></p>
-                      <p>Android手机系统APP的UI自动化测试</p>
-                      </div>
-              </li>
-            </ol>
-        </div>
-				<!--特长栏-->
-				<div class="mr-template skill-exp" id="skillExp">
+                        <p class="basic-self">
+                            <span class="link-title">CSDN:</span><a>https://blog.csdn.net/u012183426</a>
+                            <br/>
+                            <span class="link-title">个人网站:</span><a>http://xaire.wang/#/</a>
+                        </p>
+                    </div>
+                </div>
+                
+                <!--特长栏-->
+                <div class="mr-template skill-exp" id="skillExp">
                     <div class="mr-template_title">
                         <span>技能特长</span>
                     </div>
@@ -224,26 +83,147 @@
                             <div class="skill-name">CSS</div>
                         </li>
                     </ol>
-				</div>
-				
-    <!-- 教育经历 -->
-        <div class="mr-template edu-exp" id="eduExp">
-            <div class="mr-template_title">
-                <span>教育经历</span>
+                </div>
+						
+                <!-- 教育经历 -->
+                <div class="mr-template edu-exp" id="eduExp">
+                    <div class="mr-template_title">
+                        <span>教育经历</span>
+                    </div>
+                    <ol class="edu-exp_group">
+                            <li class="edu-exp_list">
+                                <p class="exp-list_time">2012.09-2016.06</p>
+                                <div class="exp-list_top">
+                                    <div class="exp-list_right">
+                                        <strong>四川大学锦城学院</strong>
+                                        <p>本科  . 统招  / 电子信息工程</p>
+                                        <p>主修课程：c、c++、java、嵌入式、SQLserver数据库、模电、Linux应用基础、数据结构、计算机网络与应用</p>
+                                    </div>
+                                </div>
+                            </li>
+                    </ol>
+                </div>
             </div>
-            <ol class="edu-exp_group">
-                    <li class="edu-exp_list">
-                        <p class="exp-list_time">2012.09-2016.06</p>
-                        <div class="exp-list_top">
-                            <div class="exp-list_right">
-                                <strong>四川大学锦城学院</strong>
-                                <p>本科  . 统招  / 电子信息工程</p>
-                            </div>
+
+			<div class="right-wrap">
+                <!-- 自我描述 -->
+                <div class="mr-template per" id="perAbility">
+                    <div class="mr-template_title">
+                        <span>王红秀-web前端开发</span>
+                    </div>
+                    <div class="per-self_content">
+                        <div class="per-self_des">
+                            熟悉es6语法。熟悉js，html5，css3技术。<br/>
+                            熟悉vue-cli项目，使用过vue-router,vuex。<br/>
+                            能熟练开发vue组件。<br/>
+                            了解nodejs，python后端语言。了解git的基本操作。<br/>
                         </div>
-                    </li>
-            </ol>
+                    </div>
+                </div>
+                <!-- 工作经历 -->
+                <div class="mr-template work-exp" id="workExp">
+                    <div class="mr-template_title">
+                        <span>工作经历</span>
+                    </div>
+                    <ol class="work-exp_group">
+                            <li class="work-exp_list">
+                                <p class="exp-list_time">2018.06-2019.12</p>
+                                <div class="exp-list_top">
+                                    <div class="exp-list_right">
+                                        <strong class="exp-list_title">
+                                            <span>北京鼎兴科技</span>
+                                                ／
+                                                <span>技术部</span>
+                                        </strong>
+                                        <p>WEB前端</p>
+                                    </div>
+                                </div>
+                                <div class="exp-list_content">
+                                    <p>1.根据客户的需求资料，完成前端页面编写，参与后期网站的维护。<br />
+                                    2.更新公司vue项目的结构，将css、js文件分模块处理。<br />
+                                    3.实现vue通用组件，定制出前端页面的公用模板。达到模板复用的目的。<br />
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="work-exp_list">
+                                <p class="exp-list_time">2016.10-2018.06</p>
+                                <div class="exp-list_top">
+                                    <div class="exp-list_right">
+                                        <strong class="exp-list_title">
+                                            <span>Symbio</span>
+                                                ／
+                                                <span>项目部</span>
+                                        </strong>
+                                        <p>测试工程师</p>
+                                    </div>
+                                </div>
+                                <div class="exp-list_content">
+                                    <p>测试智能手表软件和相应的PC、Android、ios平台应用软件功能界面及数据<br /></p>
+                                </div>
+                            </li>
+                            <li class="work-exp_list">
+                                <p class="exp-list_time">2015.11-2016.06</p>
+                                <div class="exp-list_top">
+                                    <div class="exp-list_right">
+                                        <strong class="exp-list_title">
+                                            <span>敦阳泰克成都科技有限公司</span>
+                                                ／
+                                                <span>测试部</span>
+                                        </strong>
+                                        <p>自动化测试</p>
+                                    </div>
+                                </div>
+                                <div class="exp-list_content">
+                                    <p>Android手机系统APP的UI自动化测试</p>
+                                </div>
+                            </li>
+                    </ol>
+                </div>
+                
+
+                <!-- 项目经历 -->
+                <div class="mr-template pro-exp" id="proExp">
+                    <div class="mr-template_title">
+                        <span>项目经历</span>
+                    </div>
+                    <ol class="pro-exp_group">
+                            <li class="pro-exp_list">
+                                <p class="exp-list_title">
+                                    <span class="exp-project_name">官网页面制作</span>
+                                </p>
+                                <p class="exp-list_time">2018.06-2019.12</p>
+                                <div class="exp-project_des"><p>
+                                    vue2.* +vue-cli(涉及的知识有webpack,sass,nodejs,css3,es6,JQ,html5)，定制前端页面模板。
+                                </p></div>
+                                
+                            </li>
+                            <li class="pro-exp_list">
+                                <p class="exp-list_title">
+                                    <span class="exp-project_name">个人网站</span>
+                                </p>
+                                <p class="exp-list_time">2019.11-2019.11</p>
+                                <div class="exp-project_des">
+                                    <p>搭建Vue-cli脚手架，实现SPA页面。
+                                    运用编程式路由及嵌套路由简化代码结构，提高项目的简洁度。
+                                    将数据与组件分离，提高组件的复用度。<br /></p></div>
+                            
+                            </li>
+                            <li class="pro-exp_list">
+                                <p class="exp-list_title">
+                                    <span class="exp-project_name">Element+vue</span>
+                                </p>
+                                <p class="exp-list_time">2019.12-2019.12</p>
+                                <div class="exp-project_des"><p>快餐收银系统<br /></p></div>
+                                <div class="exp-list_content">
+                                    <p>搭建vue-cli脚手架，使用element和阿里的在线图标实现快速布局，利用axios获取服务器上数据（使用mock模拟服务端的数据）。独自完成订餐系统的点餐和挂单功能。<br /></p>
+                                </div>
+                                <p class="exp-project_url">项目链接: https://github.com/Arkoly/AwesmonePosTest</p>
+                            </li>
+                    </ol>
+                </div>
+			</div>
+            
         </div>
-  </div>
 </template>
 
 <script>
@@ -269,6 +249,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
  <style scoped>
+      
         * {
             outline: none;
         }
@@ -417,16 +398,35 @@ export default {
 
         #container {
             width: 720px;
-            margin: 10px auto 54px auto;
+            margin: 50px auto 54px auto;
             border: 1px solid #e3ebe9;
             border-radius: 5px;
+            height: auto;
+            overflow: hidden;
             text-align: left;
-            background: #FAFAFA;
+            background: #fff;
         }
 
-        .mr-template {
-            padding: 0 50px;
+        .left-wrap{
+            width: 33%;
+            height: auto;
+            float: left;
+            background: #e4dfdf;
+            /* border-right: 1px solid #E3EBE9; */
         }
+        .right-wrap{
+            width: 67%;
+            height: auto;
+            float: right;
+        }
+        
+        .mr-template {
+            padding: 10px;
+        }
+        /* .mr-template.skill-exp,
+        .mr-template.edu-exp{
+            padding: 0;
+        } */
 
         .mr-template .mr-template_title {
             display: flex;
@@ -453,6 +453,12 @@ export default {
             top: 50%;
             transform: translateY(-50%);
         }
+        .per.mr-template .mr-template_title span{
+            font-size: 30px;
+        }
+        .per.mr-template .mr-template_title span:before{
+            display: none;
+        }
 
         .mr-template .mr_md_del {
             display: none;
@@ -461,16 +467,19 @@ export default {
         /***** 基本信息 ****/
 
         .basic {
-            padding: 10px 50px;
-            background: #FAFAFA;
+            padding: 10px 15px;
+            background: #e4dfdf;
             border-radius: 5px 5px 0 0;
-            border-bottom: 1px solid #E3EBE9;
+            /* border-bottom: 1px solid #E3EBE9; */
             display: flex;
+            flex-direction: column;
         }
 
         .basic .basic-photo {
-            height: 88px;
-            width: 88px;
+            height: 140px;
+            width: 100%;
+            padding-top: 15px;
+            padding-left: 55px;
             display: inline-block;
             position: relative;
         }
@@ -478,8 +487,8 @@ export default {
         .basic .basic-photo img {
             height: 140px;
             width: 100px;
-            position: absolute;
-            top: 15px;
+            /* position: absolute; */
+            /* top: 15px; */
         }
 
         .basic .basic-photo .basic-photo_shadow {
@@ -493,7 +502,7 @@ export default {
         .basic .basic-info {
             position: relative;
             width: 100%;
-            margin-left: 60px;
+            /* margin-left: 60px; */
             flex: 1;
         }
 
@@ -504,17 +513,16 @@ export default {
         }
 
         .basic .basic-info .basic-name-area {
-            overflow: hidden;
             height: 37px;
             margin-bottom: 11px;
         }
 
         .basic .basic-info .basic-name {
-            float: left;
             max-width: 250px;
             font-size: 26px;
             color: #333333;
             font-weight: 600;
+            text-align: center;
             line-height: 37px;
         }
 
@@ -528,14 +536,14 @@ export default {
         }
         .basic .basic-info .basic-self {
             margin-top: 20px;
-			
         }
-		.basic .basic-info .basic-edu{
-			padding-left: 10px;
-		}
+        .basic .basic-info .basic-self span.link-title{
+            font-weight: 600;
+            font-size: 16px;
+        }
 		.basic .basic-info .basic-self a{
-			margin-left: 20px;
 			cursor:pointer;
+            display: block;
 		}
         .basic .basic-info p {
             font-size: 14px;
@@ -569,7 +577,7 @@ export default {
         }
 
         .basic .basic-info .basic-tel {
-            margin-right: 20px;
+            /* margin-right: 94px; */
         }
 
         .basic-tel span {
@@ -614,7 +622,7 @@ export default {
 
         .work-exp .work-exp_list {
             position: relative;
-            margin-bottom: 30px;
+            /* margin-bottom: 30px; */
         }
 
         .work-exp .work-exp_list .exp-list_time {
@@ -653,24 +661,11 @@ export default {
             font-weight: 600;
         }
 
-        .work-exp .work-exp_list .tagboard {
-            margin: 20px 0 10px;
-        }
 
         .work-exp .work-exp_list .exp-list_content {
             font-size: 14px;
             color: #666666;
             line-height: 30px;
-        }
-
-        .tagboard .tagboard-tag {
-            font-size: 12px;
-            color: #999;
-            line-height: 18px;
-            padding: 3px 10px;
-            border: 1px solid #EAEDEC;
-            border-radius: 100px;
-            margin-right: 10px;
         }
 
         .work-exp .work-exp_list .exp-list_content ul, .work-exp .work-exp_list .exp-list_content_highlight ul {
@@ -688,7 +683,7 @@ export default {
 
         .pro-exp .pro-exp_list {
             position: relative;
-            margin-bottom: 30px;
+            /* margin-bottom: 15px; */
         }
 
         .pro-exp .pro-exp_list .exp-list_title {
@@ -750,7 +745,7 @@ export default {
         /***** 技能特长 ****/
         .skill-exp .skill-exp_list {
             position: relative;
-            margin: 0 25px; 
+            /* margin: 0 25px;  */
             display: inline-block;
             width: 100px;
             height: 100px;
@@ -824,11 +819,11 @@ export default {
 
         .edu-exp .edu-exp_list {
             position: relative;
-            margin-bottom: 30px;
+            margin-bottom: 65px;
         }
 
         .edu-exp .edu-exp_list .exp-list_time {
-            font-size: 14px;
+            font-size: 12px;
             color: #666666;
             position: absolute;
             right: 0;
@@ -849,7 +844,8 @@ export default {
             display: flex;
             flex-direction: column;
             flex: 1;
-            height: 46px;
+            height: 130px;
+            margin-bottom: 55px;
             justify-content: space-between;
         }
 
@@ -903,5 +899,4 @@ export default {
         }
 
 
-        /***** 图片作品 end ****/
     </style>

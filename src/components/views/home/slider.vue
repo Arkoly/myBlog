@@ -3,27 +3,26 @@
     <div class="window" @mouseover="stop" @mouseleave="play">
       <ul class="container" :style="containerStyle">
         <li>
-          <img :src="sliders[sliders.length - 1].img" alt="">
+          <img :src="sliders[sliders.length - 1].img" alt="" class="ROUTER_BLOG">
         </li>
-        <li v-for="(item, index) in sliders" :key="index">
+        <li v-for="(item, index) in sliders" :key="index" class="ROUTER_BLOG">
           <img :src="item.img" alt="">
         </li>
         <li>
-          <img :src="sliders[0].img" alt="">
+          <img :src="sliders[0].img" alt="" class="ROUTER_BLOG">
         </li>
       </ul>
       <ul class="direction">
-        <li class="left" @click="move(690, 1, speed)">
+        <li class="left" @click="move(504, 1, speed)">
           <svg class="icon" width="30px" height="30.00px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path fill="#ffffff" d="M481.233 904c8.189 0 16.379-3.124 22.628-9.372 12.496-12.497 12.496-32.759 0-45.256L166.488 512l337.373-337.373c12.496-12.497 12.496-32.758 0-45.255-12.498-12.497-32.758-12.497-45.256 0l-360 360c-12.496 12.497-12.496 32.758 0 45.255l360 360c6.249 6.249 14.439 9.373 22.628 9.373z"  /></svg>          
         </li>
-        <li class="right" @click="move(690, -1, speed)">
+        <li class="right" @click="move(504, -1, speed)">
           <svg class="icon" width="30px" height="30.00px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path fill="#ffffff" d="M557.179 904c-8.189 0-16.379-3.124-22.628-9.372-12.496-12.497-12.496-32.759 0-45.256L871.924 512 534.551 174.627c-12.496-12.497-12.496-32.758 0-45.255 12.498-12.497 32.758-12.497 45.256 0l360 360c12.496 12.497 12.496 32.758 0 45.255l-360 360c-6.249 6.249-14.439 9.373-22.628 9.373z"  /></svg>          
         </li>
       </ul>
       <ul class="dots">
         <li v-for="(dot, i) in sliders" :key="i" 
         :class="{dotted: i === (currentIndex-1)}"
-        :style="'background-image:url('+sliders[i].img+')'"
         @click = "jump(i+1)"
         >
         </li>
@@ -48,21 +47,25 @@ export default {
   data () {
     return {
       sliders:[
-        {
-          img:'/static/images/jieqi/bailu0.jpg'
+        { 
+          clazz:'ROUTER_BLOG',
+          img:'/static/images/banner/1.jpg'
         },
         {
-          img:'/static/images/jieqi/chunfen0.jpg'
+          clazz:'ROUTER_BLOG',
+          img:'/static/images/banner/2.jpg'
         },
         {
-          img:'/static/images/jieqi/dahan0.jpg'
+          clazz:'ROUTER_BLOG',
+          img:'/static/images/banner/3.jpg'
         },
         {
-          img:'/static/images/jieqi/daxue0.jpg'
+          clazz:'ROUTER_BLOG',
+          img:'/static/images/banner/4.jpg'
         }
       ],
       currentIndex:1,
-      distance:-690,
+      distance:-504,
       transitionEnd: true,
       speed: this.initialSpeed,
       slidersLen: 1,
@@ -71,7 +74,8 @@ export default {
   computed:{
     containerStyle() {
       return {
-        transform:`translate3d(${this.distance}px, 0, 0)`
+        transform:`translate3d(${this.distance}px, 0, 0)`,
+        transition: `transform 800ms ease 0s`
       }
     },
     interval() {
@@ -91,7 +95,7 @@ export default {
     move(offset, direction, speed) {
       if (!this.transitionEnd) return
       this.transitionEnd = false
-      direction === -1 ? this.currentIndex += offset/690 : this.currentIndex -= offset/690
+      direction === -1 ? this.currentIndex += offset/504 : this.currentIndex -= offset/504
       if (this.currentIndex > this.slidersLen) this.currentIndex = 1
       if (this.currentIndex < 1) this.currentIndex = this.slidersLen
 
@@ -110,14 +114,14 @@ export default {
           this.transitionEnd = true
           window.clearInterval(this.temp)
           this.distance = des
-          if (des < -690*(this.slidersLen)) this.distance = -690
-          if (des > -690) this.distance = -690*(this.slidersLen)
+          if (des < -504*(this.slidersLen)) this.distance = -504
+          if (des > -504) this.distance = -504*(this.slidersLen)
         }
       }, 20)
     },
     jump(index) {
       const direction = index - this.currentIndex >= 0 ? -1 : 1
-      const offset = Math.abs(index - this.currentIndex) * 690
+      const offset = Math.abs(index - this.currentIndex) * 504
       const jumpSpeed = Math.abs(index - this.currentIndex) === 0 ? this.speed : Math.abs(index - this.currentIndex) * this.speed 
       this.move(offset, direction, jumpSpeed)
     },
@@ -127,7 +131,7 @@ export default {
         this.timer = null
       }
       this.timer = window.setInterval(() => {
-        this.move(690, -1, this.speed)
+        this.move(504, -1, this.speed)
       }, this.interval)
     },
     stop() {

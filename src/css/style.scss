@@ -47,7 +47,7 @@ body{
 }
   .router-view{
     position: relative;
-    min-height: 880px;
+    min-height: 600px;
     width: 100%;
     height: auto;
     padding-top: 30px;
@@ -60,6 +60,19 @@ header{
   height: auto;
   position: relative;
   background: #1C2327;
+  #logo{
+    &::after{
+      content: '王红秀的个人博客';
+      position: absolute;
+      top: 50px;
+      left: 40px;
+      font-size: 20px;
+      width: 200px;
+      color: #fff;
+      height: 40px;
+      cursor: pointer;
+    }
+  }
   .header-tips{
      width: 1000px;
      height: 40px;
@@ -161,6 +174,7 @@ header{
           color: #fff;
         }
       }
+      &#subMenu_intro,
       &#subMenu_blog,
       &#subMenu_solarTerm{
         background-color: #dababa;
@@ -185,19 +199,23 @@ footer{
     }
   }
 }
-.home{
-  width: 1000px;
-  // overflow: hidden;
+.home-page{
+  width: 1100px;
+  overflow: hidden;
   margin: auto;
+  .left-box{
+    float: left;
+    overflow: hidden;
+  }
   #banner-container{
     float: left;
-    width: 690px;
+    width: 504px;
     height: auto;
     display: inline-block;
     .window{
       position:relative;
       width:100%;
-      height:600px;
+      height:260px;
       margin:0 auto;
       overflow:hidden;
       border-radius: 2%;
@@ -205,6 +223,9 @@ footer{
     .container{
       display:flex;
       position:absolute;
+      li img{
+        cursor: pointer;
+      }
     }
     .left, .right{
       position:absolute;
@@ -233,34 +254,247 @@ footer{
         width: 100%;
         position:absolute;
         bottom:38px;
-        left:50%;
+        left:90%;
         transform:translateX(-50%);
-        background: #4c1f1f;
+        // background: #4c1f1f;
       }
     .dots li{
-      display: inline-block;
-      width: 152px;
-      -webkit-box-sizing: border-box;
-      box-sizing: border-box;
-      height: 100px;
-      margin: 1px 8px;
-      cursor: pointer;
-      opacity: 0.6;
-      background-repeat: no-repeat;
-      background-size: contain;
+      width: 15px;
+      height: 15px;
+      float: left;
+      border-radius: 50%;
+      background: #fff;
+      margin: 0 5px;
+      &:hover{
+        background: rgba(165, 123, 123, 0.8);
+      }
     }
     .dots .dotted{
       opacity: 1;
+      background: rgba(165, 123, 123, 0.8);
     }
   }
-  .card{
+  .right-box{
     float: right;
+    overflow: hidden;
+  }
+}
+.blog-page{
+  width: 1100px;
+  margin: 0 auto;
+  overflow: hidden;
+  .wrapper{
+    background: #fff;
+    overflow: hidden;
+    padding: 20px;
+    h2{
+      font-size: 16px;
+      line-height: 40px;
+      border-bottom: 1px solid #eee;
+      color: #484848;
+      font-weight: normal;
+      position: relative;
+      margin-bottom: 10px;
+      text-align:left;
+      &::after{
+        content: "";
+        position: absolute;
+        width: 60px;
+        height: 2px;
+        content: "";
+        background: #000;
+        left: 0;
+        bottom: 0;
+        -moz-transition: all .5s ease;
+        -webkit-transition: all .5s ease;
+        transition: all .5s ease;
+      }
+      &:hover::after{
+        width: 80px;
+      }
+    }
+    button{
+      display: inline-block;
+      width: 100px;
+      height: 50px;
+      border-radius: 5%;
+      background: #e4415f;
+      color: #fff;
+      cursor: pointer;
+      &:hover{
+        opacity: 0.8;
+      }
+    }
+    .details p{
+      text-align: left;
+      line-height: 20px;
+      height: 20px;
+    }
+  }
+}
+.link-box{
+  width: 270px;
+  height: auto;
+  display: inline-block;
+  overflow: hidden;
+  margin: 0 30px;
+  .link-item{
+    height: 125px;
+    width: 100%;
+    display: inline-block;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    overflow: hidden;
+    border-radius: 5px;
+    background: #000;
+    position: relative;
+    cursor: pointer;
+    &:hover{
+      a{
+        opacity: 1;
+        transform: scale(1.1);
+      }
+    }
+    a{
+      width: 100%;
+      height: 100%;
+      // position: relative;
+      display: inline-block;
+      transition: all .5s;
+      opacity: 0.7;
+      background: url(../../static/images/h1.jpg) no-repeat center center;
+      
+    }
+    
+    span{
+      color: #fff;
+      font-size: 18px;
+      line-height: 1;
+      opacity: 1;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      -webkit-line-clamp: 2;
+    }
+  }
+
+}
+.content-box{
+  background: #fff;
+  border-radius: 3px;
+  padding: 20px;
+  margin-bottom: 20px;
+  overflow: hidden;
+h2{
+  font-size: 16px;
+  line-height: 40px;
+  border-bottom: 1px solid #eee;
+  color: #484848;
+  font-weight: normal;
+  position: relative;
+  margin-bottom: 10px;
+  text-align:left;
+  &::after{
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 2px;
+    content: "";
+    background: #000;
+    left: 0;
+    bottom: 0;
+    -moz-transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+  }
+  &:hover::after{
+    width: 80px;
+  }
+}
+
+.content-box-wrap{
+  .content-title{
+    font-size: 18px;
+    padding: 0 10px;
+    cursor: pointer;
+  }
+  li{
+    width: 100%;
+    height: 200px;
+    box-sizing: border-box;
+    border-bottom: 1px dotted #d3d3d3;
+    
+    .left-wrap{
+      display: inline-block;
+      float: left;
+      position: relative;
+      overflow: hidden;
+      &:hover{
+        a{transform: scale(1.1);}
+      }
+      a{
+        width: 270px;
+        height: 125px;
+        display: inline-block;
+        transition: all .5s;
+        opacity: 0.7;
+        background: url(../../static/images/h1.jpg) no-repeat center center;
+        position: relative;
+      }
+      .content-tags{
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 9;
+        font-style: normal;
+        padding: 3px 5px;
+        color: #fff;
+        background: rgba(18,182,221,.8);
+        font-size: 14px;
+      }
+    }
+    .right-wrap{
+      display: inline-block;
+      overflow: hidden;
+      position: relative;
+      height: 129px;
+      .content-other{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        text-align: left;
+        span{
+          float: right;
+          padding: 10px;
+          cursor: pointer;
+          color: #fff;
+          background: #149bea;
+          &:hover{
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+  }
+}
+}
+
+.content-title{
+  text-align: left;
+  font-size: 18px;
+  margin-bottom: 20px;
+  // padding: 0 20px;
+  // font-weight: 600px;
+  &:hover{
+    color: #149bea;
   }
 }
 
 .card{
   width: 265px;
-  height: 225px;
+  height: 260px;
   background: #fff;
   display: inline-block;
   border-radius: 2%;
@@ -281,7 +515,7 @@ footer{
     color: #d0d2d4;
   }
   .linkmore{
-    margin: 15px;
+    margin: 30px 0; 
     li{
       display: inline-block;
       width: 25%;
@@ -320,12 +554,13 @@ footer{
     }
   }
 }
-.blog{
+.intro{
   width: 1200px;
   margin: 0 auto;
+  height: 600px;
   position: relative;
   .wrapper{
-    .blog-main {
+    .intro-main {
       >li>a{
         &:hover,&.active{
           background-color: #8a4545;
@@ -342,7 +577,7 @@ footer{
           transition: 0.5s all;
           text-decoration: none;
         }
-        .blog-content{
+        .intro-content{
           position: absolute;
           text-align: left;
           left: 50%;
@@ -505,40 +740,109 @@ footer{
   }
 }
 
+
+header #navBox{
+  display: none;
+  height: 35px;
+  position: absolute;
+  top: -5px;
+  left: 0px;
+  width: 30px;
+  cursor: pointer;
+
+  .navIcon{
+    display: inline-block;
+    width: 100%;
+    height: 5px;
+    position: relative;
+    top: 25px;
+    background: #fff;
+    &::after,&::before{
+      content: '';
+      height: 5px;
+      width: 100%;
+      display: inline-block;
+      background: #fff;
+      top: -18px;
+      position: relative;
+    }
+  }
+}
 //移动端适配
-@media screen and (min-width: 960px) and (max-width: 1199px){
+@media screen and (max-width: 1100px){
+  header .menu{
+    display: none;
+    background: rgba(0,0,0,0.5);
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    .menu-main{
+      position: absolute;
+      width: 200px;
+      height: auto;
+      overflow: hidden;
+      z-index: 10;
+      background: #333333;
+      li{
+        width: 100%;
+      }
+    }
+    .menu-sub{
+      display: none !important;
+    }
+  }
+  body header{
+    .header-tips{
+      width: 100%;
+    }
+    #logo::after{
+      top: 10px;
+      left: 50%;
+      margin-left: -100px;
+    }
+    #navBox{
+      display: inline-block;
+    }
+  }
+  body {
+    .home-page, .blog-page{
+      width: 100%;
+    }
+    .card{
+      display: none;
+    }
+    .link-box{
+      margin: 0;
+    }
+    header .header-tips .wrapper li{
+      margin: 0;
+    }
+  }
+}
+@media screen and (min-width: 960px) and (max-width: 1100px){
   body{
-    .blog{
-      .blog-content{
+    .home-page .left-box{
+      margin: 0 120px;
+    }
+    .intro{
+      .intro-content{
         width: 800px;
         -webkit-transform: translateX(-300px);
         transform: translateX(-300px);
       }
     }
   }
+
 }
 @media screen and (min-width: 768px) and (max-width: 959px){
   body{
-    header {
-      .header-tips{
-        width:100%;
-      }
-      .menu .menu-main{
-        width: 100%;
-      }
+    .home-page #banner-container{
+      width: 60%;
     }
-    .home{
-      width:100%;
-      #banner-container{
-        float: none;
-      }
-      .card{
-        float: none;
-      }
-    }
-    .blog{
+    .intro{
       width: 100%;
-      .wrapper .blog-main li .blog-content{
+      .wrapper .intro-main li .intro-content{
         width: 600px;
         -webkit-transform: translateX(-300px);
         transform: translateX(-300px);
@@ -560,9 +864,6 @@ footer{
         }
       }
     }
-    .doc .card{
-      display: none;
-    }
   }
 }
 @media screen and (max-width: 767px){
@@ -571,34 +872,14 @@ footer{
     .router-view{
       min-height: 540px;
     }
-    header {
-      .header-tips{
-        width:100%;
-      }
-      .menu .menu-main{
-        width: 100%;
-        li{
-          width: 48px;
-          &:nth-child(3){
-            width: 90px;
-          }
-        }
-      }
-    }
-    .home{
-      width:100%;
-      #banner-container{
-        display: none;
-      }
-      .card{
-        float: none;
-      }
-    }
-    .blog{
+    .home-page #banner-container{
       width: 100%;
-      .wrapper .blog-main li{
+    }
+    .intro{
+      width: 100%;
+      .wrapper .intro-main li{
         width: 75px;
-        .blog-content{
+        .intro-content{
           width: 100%;
           transform: translateX(-188px);
         }

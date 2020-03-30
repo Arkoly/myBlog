@@ -7,6 +7,8 @@ import home from '@/components/views/home'
 import solarTerm from '@/components/views/solarTerm'
 import doc from '@/components/views/doc'
 import three from '@/components/views/three'
+import animate from '@/components/views/animate'
+import intro from '@/components/views/intro'
 
 /*childdenList下的组件当做template组件的子路由嵌套*/
 let childdenList = [
@@ -15,6 +17,8 @@ let childdenList = [
   { path :'solarTerm', component: solarTerm, name: 'solarTerm'},
   { path :'doc', component: doc, name: 'doc'},
   { path :'three', component: three, name: 'three'},
+  { path : 'animate', component: animate, name: 'animate'},
+  { path : 'intro', component: intro, name: 'intro'}
 ]
 
 Vue.use(Router)
