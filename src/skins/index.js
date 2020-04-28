@@ -45,12 +45,12 @@ const menu = {
                 {name:'冬至',id:'dz',clazz:'dongzhi0 ROUTER_SOLAR_TERM'},
             ]
         },
-        // {
-        //     id:'three',
-        //     name:'threeJs',
-        //     text: '',
-        //     clazz: 'three-menu ROUTER_THREE'
-        // },
+        {
+            id:'three',
+            name:'threeJs',
+            text: '',
+            clazz: 'three-menu ROUTER_THREE'
+        },
         {
             id:'animate',
             name:'动画',

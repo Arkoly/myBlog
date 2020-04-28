@@ -51,6 +51,7 @@
 
 <script>
 import $ from "jquery";
+import * as THREE from  "three";
 export default {
   name: "three",
   data() {
@@ -78,7 +79,9 @@ export default {
     }
   },
   computed: {},
-  mounted() {},
+  mounted() {
+    console.log('threejs的API应用：'+THREE.Scene)
+  },
   created(){
     console.log('a is '+ this.life.a)
   }

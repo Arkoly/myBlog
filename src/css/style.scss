@@ -206,6 +206,7 @@ footer{
   .left-box{
     float: left;
     overflow: hidden;
+    width: 75%;
   }
   #banner-container{
     float: left;
@@ -274,6 +275,16 @@ footer{
       background: rgba(165, 123, 123, 0.8);
     }
   }
+
+  // #banner-container{
+  //   width: 504px;
+  //   height: 260px;
+  //   // border: 1px solid red;
+  //   -webkit-box-sizing: border-box;
+  //   box-sizing: border-box;
+  //   display: inline-block;
+  //   float: left;
+  // }
   .right-box{
     float: right;
     overflow: hidden;
@@ -338,7 +349,7 @@ footer{
   height: auto;
   display: inline-block;
   overflow: hidden;
-  margin: 0 30px;
+  // margin: 0 30px;
   .link-item{
     height: 125px;
     width: 100%;
