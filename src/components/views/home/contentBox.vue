@@ -12,7 +12,7 @@
          <div class="right-wrap">
            <p class="content-detail">{{item.detail}}</p>
             <p class="content-other">{{item.times}} 
-              <span :class="contentBox.listClazz">{{item.other}}</span>
+              <span :class="contentBox.listClazz" @click="handleClick(item.articleId)">{{item.other}}</span>
             </p>
          </div>
       </li>
@@ -37,6 +37,11 @@ export default {
         this.contentBox = data;
       });
     });
+  },
+  methods: {
+    handleClick(queryId){
+      this.$router.push({path: '/blog', query: {articleId: queryId}})
+    }
   }
 }
 </script>

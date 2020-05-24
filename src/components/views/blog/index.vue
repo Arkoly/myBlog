@@ -2,10 +2,10 @@
   <div class="blog-page">
    <div class="wrapper">
      <h2>{{blogData.blogTags}}</h2>
-     <article>
-       <h3 :class="'content-title'">{{blogData.blogTitle}}</h3>
+     <article >
+       <h3 :class="'content-title'">{{article.blogTitle}}</h3>
        <div class="details">
-         <p v-for="item in blogData.details">{{item.list}}</p>
+         <p v-for="item in article.details">{{item.list}}</p>
        </div>
        <button @click="addCount">点赞！{{count}}</button>
      </article>
@@ -20,30 +20,37 @@ export default {
   data () {
     return {
       blogData: {},
-      count:0   //用于接收当前点击的li的下标
+      count:0, //用于接收当前点击的li的下标,
+      articleId: 0,
+      article: {}
     }
-  },
-  methods:{
-    addCount(i){
-       this.count = this.count+1;
-    },
-  },
-  computed:{
-  },
-  mounted(){
   },
   created(){
     import(/* webpackChunkName: "[request]" */ `../../../skins/blog.js`).then(mod => {
       let data = mod.blogData;
       this.$nextTick(()=>{
         this.blogData = data;
-        this.count = this.blogData.count
+        this.article = this.blogData.list.filter((e) => {
+          return e.articleId === this.articleId
+        })[0]
       });
     });
-    
+    this.$nextTick(() => {
+      this.getArticleId()
+    })
+  },
+  watch: {
+    '$route': 'getArticleId'
+  },
+  methods:{
+    addCount(i){
+       this.count = this.count+1;
+    },
+    getArticleId(){
+      //接收其他页面传过来的查询文章ID的参数 articleId
+      this.articleId = this.$route.query.articleId
+    }
   }
-  
-  
 }
 </script>
 

@@ -45,12 +45,12 @@ const menu = {
                 {name:'冬至',id:'dz',clazz:'dongzhi0 ROUTER_SOLAR_TERM'},
             ]
         },
-        {
-            id:'three',
-            name:'threeJs',
-            text: '',
-            clazz: 'three-menu ROUTER_THREE'
-        },
+        // {
+        //     id:'three',
+        //     name:'threeJs',
+        //     text: '',
+        //     clazz: 'three-menu ROUTER_THREE'
+        // },
         {
             id:'animate',
             name:'动画',
@@ -98,13 +98,15 @@ const linkBox={
     listClazz:'ROUTER_BLOG',
     list:[
         {
-            clazz:'link-box-item box1 ROUTER_BLOG' ,
+            articleId: 0,
+            clazz:'link-box-item box1 ' ,
             title:'uni-app实现购物功能模块',
             text:'uni-app实现购物功能模块?',
             href:''
         },
         {
-            clazz:'link-box-item box2 ROUTER_BLOG' ,
+            articleId: 1,
+            clazz:'link-box-item box2 ' ,
             title:'calc()无效的问题',
             text:'calc()无效的问题?',
             href:''
@@ -113,12 +115,12 @@ const linkBox={
 }
 const contentBox={
     listTitle:'最新博文',
-    listClazz:'ROUTER_BLOG',
+    // listClazz:'ROUTER_BLOG', 
     list:[
-        {clazz:'item0',title:'uni-app的学习0',tags:'vuejs0',times:'2020-03-22',other:'阅读更多',detail:'01uni-app的学习uni-app的学习uni-app的学习uni-app的学习'},
-        {clazz:'item1',title:'uni-app的学习1',tags:'vuejs1',times:'2020-03-23',other:'阅读更多',detail:'02uni-app的学习uni-app的学习uni-app的学习uni-app的学习'},
-        {clazz:'item2',title:'uni-app的学习2',tags:'vuejs2',times:'2020-03-24',other:'阅读更多',detail:'03uni-app的学习uni-app的学习uni-app的学习uni-app的学习'},
-        {clazz:'item3',title:'uni-app的学习3',tags:'vuejs3',times:'2020-03-25',other:'阅读更多',detail:'04uni-app的学习uni-app的学习uni-app的学习uni-app的学习'},
+        {articleId: 0, clazz:'item0',title:'uni-app的学习0',tags:'vuejs0',times:'2020-03-22',other:'阅读更多',detail:'01uni-app的学习uni-app的学习uni-app的学习uni-app的学习'},
+        {articleId: 1, clazz:'item1',title:'clac计算无效？',tags:'CSS',times:'2020-03-23',other:'阅读更多',detail:'cclac进行计算的时候，计算符号两边必须要有空格！'},
+        {articleId: 2, clazz:'item2',title:'uni-app的学习2',tags:'vuejs2',times:'2020-03-24',other:'阅读更多',detail:'03uni-app的学习uni-app的学习uni-app的学习uni-app的学习'},
+        {articleId: 3, clazz:'item3',title:'uni-app的学习3',tags:'vuejs3',times:'2020-03-25',other:'阅读更多',detail:'04uni-app的学习uni-app的学习uni-app的学习uni-app的学习'},
     ]
 }
 

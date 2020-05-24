@@ -13,10 +13,10 @@
 
 <script>
 
-const compSlider = () => import(/* webpackChunkName: "./slider" */'./slider')
-const compContentBox = () => import(/* webpackChunkName: "./contentBox" */'./contentBox')
-const compCard = () => import(/* webpackChunkName: "../../card" */'../../card')
-const compLinkBox = () => import(/* webpackChunkName: "../../linkBox" */'../../linkBox')
+const compSlider = () => import(/* webpackChunkName: "home-index" */'./slider')
+const compContentBox = () => import(/* webpackChunkName: "home-index" */'./contentBox')
+const compCard = () => import(/* webpackChunkName: "home-index" */'../../card')
+const compLinkBox = () => import(/* webpackChunkName: "home-index" */'../../linkBox')
 export default {
   name: 'home',
   components:{
