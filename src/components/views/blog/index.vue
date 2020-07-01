@@ -48,7 +48,7 @@ export default {
     },
     getArticleId(){
       //接收其他页面传过来的查询文章ID的参数 articleId
-      this.articleId = this.$route.query.articleId
+      this.articleId = this.$route.query.articleId || 0
     }
   }
 }

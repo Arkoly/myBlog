@@ -11,8 +11,7 @@ Vue.config.productionTip = false
 window.VM = new Vue({
   el: '#app',
   router,
-  components: { App },
-  template: '<App/>'
+  render: h => h(App)
 });
 // console.log('window.VM');
 // window.VM.$router.push('/blog');
